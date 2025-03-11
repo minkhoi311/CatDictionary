@@ -18,3 +18,4 @@ C:\_SourceBaiTapRoot\C#\CatDictionary\obj\Debug\Dictionary.pdb
 C:\_SourceBaiTapRoot\C#\CatDictionary\bin\Debug\Dictionary.exe.config
 C:\_SourceBaiTapRoot\C#\CatDictionary\bin\Debug\Dictionary.exe
 C:\_SourceBaiTapRoot\C#\CatDictionary\bin\Debug\Dictionary.pdb
+C:\_SourceBaiTapRoot\C#\CatDictionary\obj\Debug\Dictionary.FixWordForm.resources

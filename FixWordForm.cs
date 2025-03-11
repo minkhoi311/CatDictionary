@@ -4,7 +4,6 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Drawing.Drawing2D;
-using System.Drawing.Text;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
@@ -13,17 +12,15 @@ using System.Windows.Forms;
 
 namespace Dictionary
 {
-    public partial class Form1 : System.Windows.Forms.Form
+    public partial class FixWordForm : Form
     {
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(int nLeft, int nTop, int nRight, int nBottom, int nWidthEllipse, int nHeightEllipse);
-
-        public Form1()
+        public FixWordForm()
         {
             InitializeComponent();
             label1.Paint += Label_Paint;
         }
-
         // design lại form
         private void Label_Paint(object sender, PaintEventArgs e)
         {
@@ -57,41 +54,16 @@ namespace Dictionary
                 }
             }
         }
+
         //design lại btn
         private void ApplyRoundedButton(Button btn, int radius)
         {
             btn.Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, btn.Width, btn.Height, radius, radius));
         }
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-            ApplyRoundedButton(btnImport, 30);
-            ApplyRoundedButton(btnAdd, 30);
-            ApplyRoundedButton(btnRemove, 30);
-            ApplyRoundedButton(btnFix, 30);
-            ApplyRoundedButton(btnMyWord, 30);
-            ApplyRoundedButton(btnGame, 30);
-            ApplyRoundedButton(btnCopy, 20);
-            ApplyRoundedButton(btnSave, 20);
 
-            btnCopy.Image = ResizeImage(Properties.Resources.copy,
-                            btnCopy.Width - 15, btnCopy.Height -15);
-        }
-        //design lại search
-        private Image ResizeImage(Image img, int width, int height)
+        private void FixWordForm_Load(object sender, EventArgs e)
         {
-            Bitmap resized = new Bitmap(width, height);
-            using (Graphics g = Graphics.FromImage(resized))
-            {
-                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
-                g.DrawImage(img, 0, 0, width, height);
-            }
-            return resized;
-        }
-
-        private void btnFix_Click(object sender, EventArgs e)
-        {
-            FixWordForm fixWordForm = new FixWordForm();
-            fixWordForm.ShowDialog();
+            ApplyRoundedButton(btnDone, 30);
         }
     }
 }

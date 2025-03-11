@@ -100,6 +100,7 @@ namespace Dictionary
             this.btnFix.TabIndex = 1;
             this.btnFix.Text = "FixWord";
             this.btnFix.UseVisualStyleBackColor = false;
+            this.btnFix.Click += new System.EventHandler(this.btnFix_Click);
             // 
             // btnMyWord
             // 
