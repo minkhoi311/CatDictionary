@@ -18,3 +18,14 @@ C:\_SourceBaiTapRoot\C#\CatDictionary\obj\Debug\Dictionary.pdb
 C:\_SourceBaiTapRoot\C#\CatDictionary\bin\Debug\Dictionary.exe.config
 C:\_SourceBaiTapRoot\C#\CatDictionary\bin\Debug\Dictionary.exe
 C:\_SourceBaiTapRoot\C#\CatDictionary\bin\Debug\Dictionary.pdb
+C:\Users\MyAn\source\repos\CatDictionary\bin\Debug\Dictionary.exe.config
+C:\Users\MyAn\source\repos\CatDictionary\bin\Debug\Dictionary.exe
+C:\Users\MyAn\source\repos\CatDictionary\bin\Debug\Dictionary.pdb
+C:\Users\MyAn\source\repos\CatDictionary\obj\Debug\Dictionary.csproj.AssemblyReference.cache
+C:\Users\MyAn\source\repos\CatDictionary\obj\Debug\Dictionary.AddForm.resources
+C:\Users\MyAn\source\repos\CatDictionary\obj\Debug\Dictionary.Form1.resources
+C:\Users\MyAn\source\repos\CatDictionary\obj\Debug\Dictionary.Properties.Resources.resources
+C:\Users\MyAn\source\repos\CatDictionary\obj\Debug\Dictionary.csproj.GenerateResource.cache
+C:\Users\MyAn\source\repos\CatDictionary\obj\Debug\Dictionary.csproj.CoreCompileInputs.cache
+C:\Users\MyAn\source\repos\CatDictionary\obj\Debug\Dictionary.exe
+C:\Users\MyAn\source\repos\CatDictionary\obj\Debug\Dictionary.pdb
