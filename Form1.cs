@@ -71,16 +71,10 @@ namespace Dictionary
             ApplyRoundedButton(btnMyWord, 30);
             ApplyRoundedButton(btnGame, 30);
             ApplyRoundedButton(btnCopy, 20);
-            ApplyRoundedButton(btnShare, 20);
             ApplyRoundedButton(btnSave, 20);
-            ApplyRoundedButton(btnFB, 20);
 
             btnCopy.Image = ResizeImage(Properties.Resources.copy,
                             btnCopy.Width - 15, btnCopy.Height -15);
-            btnShare.Image = ResizeImage(Properties.Resources.share,
-                            btnCopy.Width - 15, btnCopy.Height - 15);
-            btnFB.Image = ResizeImage(Properties.Resources.facebook,
-                            btnCopy.Width - 10, btnCopy.Height - 10);
         }
         //design lại search
         private Image ResizeImage(Image img, int width, int height)
