@@ -88,10 +88,17 @@ namespace Dictionary
             return resized;
         }
 
+<<<<<<< HEAD
         private void btnFix_Click(object sender, EventArgs e)
         {
             FixWordForm fixWordForm = new FixWordForm();
             fixWordForm.ShowDialog();
+=======
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AddForm dgl2 = new AddForm();
+            dgl2.ShowDialog();
+>>>>>>> MyAn
         }
     }
 }

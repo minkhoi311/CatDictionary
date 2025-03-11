@@ -46,11 +46,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="FixWordForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FixWordForm.Designer.cs">
       <DependentUpon>FixWordForm.cs</DependentUpon>
+=======
+    <Compile Include="AddForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddForm.Designer.cs">
+      <DependentUpon>AddForm.cs</DependentUpon>
+>>>>>>> MyAn
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -60,8 +68,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <EmbeddedResource Include="FixWordForm.resx">
       <DependentUpon>FixWordForm.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="AddForm.resx">
+      <DependentUpon>AddForm.cs</DependentUpon>
+>>>>>>> MyAn
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
