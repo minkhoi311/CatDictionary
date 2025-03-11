@@ -18,9 +18,6 @@ C:\_SourceBaiTapRoot\C#\CatDictionary\obj\Debug\Dictionary.pdb
 C:\_SourceBaiTapRoot\C#\CatDictionary\bin\Debug\Dictionary.exe.config
 C:\_SourceBaiTapRoot\C#\CatDictionary\bin\Debug\Dictionary.exe
 C:\_SourceBaiTapRoot\C#\CatDictionary\bin\Debug\Dictionary.pdb
-<<<<<<< HEAD
-C:\_SourceBaiTapRoot\C#\CatDictionary\obj\Debug\Dictionary.FixWordForm.resources
-=======
 C:\Users\MyAn\source\repos\CatDictionary\bin\Debug\Dictionary.exe.config
 C:\Users\MyAn\source\repos\CatDictionary\bin\Debug\Dictionary.exe
 C:\Users\MyAn\source\repos\CatDictionary\bin\Debug\Dictionary.pdb
@@ -32,4 +29,14 @@ C:\Users\MyAn\source\repos\CatDictionary\obj\Debug\Dictionary.csproj.GenerateRes
 C:\Users\MyAn\source\repos\CatDictionary\obj\Debug\Dictionary.csproj.CoreCompileInputs.cache
 C:\Users\MyAn\source\repos\CatDictionary\obj\Debug\Dictionary.exe
 C:\Users\MyAn\source\repos\CatDictionary\obj\Debug\Dictionary.pdb
->>>>>>> MyAn
+C:\Users\Acer\Downloads\CatDictionary-MyAn\CatDictionary-MyAn\obj\Debug\Dictionary.csproj.AssemblyReference.cache
+C:\Users\Acer\Downloads\CatDictionary-MyAn\CatDictionary-MyAn\obj\Debug\Dictionary.AddForm.resources
+C:\Users\Acer\Downloads\CatDictionary-MyAn\CatDictionary-MyAn\obj\Debug\Dictionary.Form1.resources
+C:\Users\Acer\Downloads\CatDictionary-MyAn\CatDictionary-MyAn\obj\Debug\Dictionary.csproj.GenerateResource.cache
+C:\Users\Acer\Downloads\CatDictionary-MyAn\CatDictionary-MyAn\obj\Debug\Dictionary.exe
+C:\Users\Acer\Downloads\CatDictionary-MyAn\CatDictionary-MyAn\obj\Debug\Dictionary.pdb
+C:\Users\Acer\Downloads\CatDictionary-MyAn\CatDictionary-MyAn\bin\Debug\Dictionary.exe.config
+C:\Users\Acer\Downloads\CatDictionary-MyAn\CatDictionary-MyAn\bin\Debug\Dictionary.exe
+C:\Users\Acer\Downloads\CatDictionary-MyAn\CatDictionary-MyAn\bin\Debug\Dictionary.pdb
+C:\Users\Acer\Downloads\CatDictionary-MyAn\CatDictionary-MyAn\obj\Debug\Dictionary.Properties.Resources.resources
+C:\Users\Acer\Downloads\CatDictionary-MyAn\CatDictionary-MyAn\obj\Debug\Dictionary.csproj.CoreCompileInputs.cache
