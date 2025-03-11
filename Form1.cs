@@ -93,5 +93,11 @@ namespace Dictionary
             AddForm dgl2 = new AddForm();
             dgl2.ShowDialog();
         }
+
+        private void btnFix_Click(object sender, EventArgs e)
+        {
+            FixWordForm fixWordForm = new FixWordForm();
+            fixWordForm.ShowDialog();
+        }
     }
 }

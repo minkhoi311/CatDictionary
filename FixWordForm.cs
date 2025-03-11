@@ -65,5 +65,10 @@ namespace Dictionary
         {
             ApplyRoundedButton(btnDone, 30);
         }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

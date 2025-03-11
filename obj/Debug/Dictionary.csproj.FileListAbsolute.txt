@@ -40,3 +40,15 @@ C:\Users\Acer\Downloads\CatDictionary-MyAn\CatDictionary-MyAn\bin\Debug\Dictiona
 C:\Users\Acer\Downloads\CatDictionary-MyAn\CatDictionary-MyAn\bin\Debug\Dictionary.pdb
 C:\Users\Acer\Downloads\CatDictionary-MyAn\CatDictionary-MyAn\obj\Debug\Dictionary.Properties.Resources.resources
 C:\Users\Acer\Downloads\CatDictionary-MyAn\CatDictionary-MyAn\obj\Debug\Dictionary.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Downloads\CatDictionary-main\bin\Debug\Dictionary.exe.config
+C:\Users\Acer\Downloads\CatDictionary-main\bin\Debug\Dictionary.exe
+C:\Users\Acer\Downloads\CatDictionary-main\bin\Debug\Dictionary.pdb
+C:\Users\Acer\Downloads\CatDictionary-main\obj\Debug\Dictionary.csproj.AssemblyReference.cache
+C:\Users\Acer\Downloads\CatDictionary-main\obj\Debug\Dictionary.AddForm.resources
+C:\Users\Acer\Downloads\CatDictionary-main\obj\Debug\Dictionary.Form1.resources
+C:\Users\Acer\Downloads\CatDictionary-main\obj\Debug\Dictionary.Properties.Resources.resources
+C:\Users\Acer\Downloads\CatDictionary-main\obj\Debug\Dictionary.csproj.GenerateResource.cache
+C:\Users\Acer\Downloads\CatDictionary-main\obj\Debug\Dictionary.csproj.CoreCompileInputs.cache
+C:\Users\Acer\Downloads\CatDictionary-main\obj\Debug\Dictionary.exe
+C:\Users\Acer\Downloads\CatDictionary-main\obj\Debug\Dictionary.pdb
+C:\Users\Acer\Downloads\CatDictionary-main\obj\Debug\Dictionary.FixWordForm.resources
