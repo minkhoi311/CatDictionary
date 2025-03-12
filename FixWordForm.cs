@@ -28,9 +28,5 @@ namespace Dictionary
 
         }
 
-        private void btnDone_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
