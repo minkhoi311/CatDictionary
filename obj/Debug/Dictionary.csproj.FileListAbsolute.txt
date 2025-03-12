@@ -73,3 +73,4 @@ C:\_SourceBaiTapRoot\C#\BT\CatDictionary\bin\Debug\ExcelDataReader.xml
 C:\_SourceBaiTapRoot\C#\BT\CatDictionary\bin\Debug\ExcelDataReader.DataSet.pdb
 C:\_SourceBaiTapRoot\C#\BT\CatDictionary\bin\Debug\ExcelDataReader.DataSet.xml
 C:\_SourceBaiTapRoot\C#\BT\CatDictionary\obj\Debug\Dictionary.csproj.Up2Date
+C:\_SourceBaiTapRoot\C#\BT\CatDictionary\obj\Debug\Dictionary.RemoveForm.resources

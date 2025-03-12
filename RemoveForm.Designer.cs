@@ -58,7 +58,7 @@
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 24;
+            this.listBox1.ItemHeight = 29;
             this.listBox1.Items.AddRange(new object[] {
             "yellow ",
             "blue",
@@ -68,13 +68,15 @@
             "black"});
             this.listBox1.Location = new System.Drawing.Point(128, 106);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(569, 220);
+            this.listBox1.Size = new System.Drawing.Size(569, 207);
             this.listBox1.TabIndex = 1;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // btnXoa
             // 
             this.btnXoa.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnXoa.FlatAppearance.BorderSize = 0;
+            this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnXoa.Location = new System.Drawing.Point(462, 362);
             this.btnXoa.Name = "btnXoa";
@@ -144,8 +146,9 @@
             // 
             // RemoveForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(825, 465);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
@@ -159,6 +162,7 @@
             this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "RemoveForm";
             this.Text = "Remove";
+            this.Load += new System.EventHandler(this.RemoveForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();

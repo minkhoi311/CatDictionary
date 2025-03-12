@@ -119,5 +119,11 @@ namespace Dictionary
                 MessageBox.Show("Không tìm thấy từ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
+
+        private void btnRemove_Click(object sender, EventArgs e)
+        {
+            RemoveForm removeForm = new RemoveForm();
+            removeForm.ShowDialog();
+        }
     }
 }

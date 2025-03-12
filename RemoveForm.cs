@@ -10,12 +10,13 @@ using System.Windows.Forms;
 
 namespace Dictionary
 {
-    public partial class RemoveForm : Form
+    public partial class RemoveForm : BaseForm
     {
         public RemoveForm()
         {
             InitializeComponent();
         }
+        
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -43,6 +44,11 @@ namespace Dictionary
             {
                 lbTuXoa.Text = listBox1.SelectedItem.ToString();
             }
+        }
+
+        private void RemoveForm_Load(object sender, EventArgs e)
+        {
+            ApplyButtonDesign(new Button[] { btnXoa }, 30);
         }
     }
 }
