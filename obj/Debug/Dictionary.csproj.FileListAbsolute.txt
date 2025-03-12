@@ -52,3 +52,5 @@ C:\Users\Acer\Downloads\CatDictionary-main\obj\Debug\Dictionary.csproj.CoreCompi
 C:\Users\Acer\Downloads\CatDictionary-main\obj\Debug\Dictionary.exe
 C:\Users\Acer\Downloads\CatDictionary-main\obj\Debug\Dictionary.pdb
 C:\Users\Acer\Downloads\CatDictionary-main\obj\Debug\Dictionary.FixWordForm.resources
+C:\_SourceBaiTapRoot\C#\CatDictionary\obj\Debug\Dictionary.AddForm.resources
+C:\_SourceBaiTapRoot\C#\CatDictionary\obj\Debug\Dictionary.FixWordForm.resources
