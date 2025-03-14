@@ -74,3 +74,12 @@ C:\_SourceBaiTapRoot\C#\BT\CatDictionary\bin\Debug\ExcelDataReader.DataSet.pdb
 C:\_SourceBaiTapRoot\C#\BT\CatDictionary\bin\Debug\ExcelDataReader.DataSet.xml
 C:\_SourceBaiTapRoot\C#\BT\CatDictionary\obj\Debug\Dictionary.csproj.Up2Date
 C:\_SourceBaiTapRoot\C#\BT\CatDictionary\obj\Debug\Dictionary.RemoveForm.resources
+C:\Users\MyAn\source\repos\CatDictionary\bin\Debug\ExcelDataReader.DataSet.dll
+C:\Users\MyAn\source\repos\CatDictionary\bin\Debug\ExcelDataReader.dll
+C:\Users\MyAn\source\repos\CatDictionary\bin\Debug\ExcelDataReader.pdb
+C:\Users\MyAn\source\repos\CatDictionary\bin\Debug\ExcelDataReader.xml
+C:\Users\MyAn\source\repos\CatDictionary\bin\Debug\ExcelDataReader.DataSet.pdb
+C:\Users\MyAn\source\repos\CatDictionary\bin\Debug\ExcelDataReader.DataSet.xml
+C:\Users\MyAn\source\repos\CatDictionary\obj\Debug\Dictionary.FixWordForm.resources
+C:\Users\MyAn\source\repos\CatDictionary\obj\Debug\Dictionary.RemoveForm.resources
+C:\Users\MyAn\source\repos\CatDictionary\obj\Debug\Dictionary.csproj.Up2Date

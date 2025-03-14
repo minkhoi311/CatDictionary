@@ -147,7 +147,7 @@ namespace Dictionary
             this.txtSearch.Location = new System.Drawing.Point(162, 25);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(497, 44);
+            this.txtSearch.Size = new System.Drawing.Size(497, 37);
             this.txtSearch.TabIndex = 0;
             // 
             // btnCopy
@@ -197,7 +197,7 @@ namespace Dictionary
             this.lbIPA.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIPA.Location = new System.Drawing.Point(185, 234);
             this.lbIPA.Name = "lbIPA";
-            this.lbIPA.Size = new System.Drawing.Size(89, 26);
+            this.lbIPA.Size = new System.Drawing.Size(72, 20);
             this.lbIPA.TabIndex = 4;
             this.lbIPA.Text = "/heˈləʊ/";
             // 
@@ -274,7 +274,7 @@ namespace Dictionary
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(868, 518);

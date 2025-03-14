@@ -21,5 +21,17 @@ namespace Dictionary
         {
             ApplyButtonDesign(new Button[] { btnDone }, 30);
         }
+
+        private void btnDone_Click(object sender, EventArgs e)
+        {
+                if (MessageBox.Show("Bạn có chắc muốn thêm từ vựng này vào danh sách?", "Xác nhận",
+               MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                {
+                    listBox1.Items.Insert(0, txtWord.Text);
+                MessageBox.Show("Thêm từ vựng thành công!", "Thông báo!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+        }
+
     }
 }

@@ -125,5 +125,7 @@ namespace Dictionary
             RemoveForm removeForm = new RemoveForm();
             removeForm.ShowDialog();
         }
+
+      
     }
 }
