@@ -154,26 +154,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Resources\meo21.png" />
+    <Content Include="Resources\meow11.png" />
+    <None Include="Resources\share.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\foot.png" />
+    <None Include="Resources\facebook.png" />
     <None Include="Resources\copy.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\share.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\facebook.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\foot.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Resources\meo21.png" />
-    <Content Include="Resources\meow11.png" />
+    <Folder Include="Resources\excel\" />
+    <Folder Include="Resources\picture\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Text;
 using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.IO;
-using ExcelDataReader;
 
 namespace Dictionary
 {
@@ -35,59 +25,8 @@ namespace Dictionary
             AddForm dgl2 = new AddForm();
             dgl2.ShowDialog();
         }
-        private DataTable excelData;
-        private string importedFilePath;
-        //getter và setter
-        public DataTable GetExcelData()
-        {
-            return excelData;
-        }
-        public void SetExcelData(DataTable data)
-        {
-            excelData = data;
-        }
-
-        public string GetImportedFilePath()
-        {
-            return importedFilePath;
-        }
 
         // thêm từ
-        private void LoadExcelData(string filePath)
-        {
-            try
-            {
-                if (!File.Exists(filePath))
-                {
-                    MessageBox.Show("File Excel không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
-
-                using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
-                {
-                    using (var reader = ExcelReaderFactory.CreateReader(stream))
-                    {
-                        var result = reader.AsDataSet(new ExcelDataSetConfiguration()
-                        {
-                            ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = false }
-                        });
-                        excelData = result.Tables[0];
-                        if (excelData.Rows.Count == 0)
-                        {
-                            MessageBox.Show("File Excel không có dữ liệu!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        }
-                        else
-                        {
-                            MessageBox.Show("Dữ liệu đã được nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi đọc file Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
         private void btnImport_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
@@ -98,9 +37,7 @@ namespace Dictionary
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                importedFilePath = openFileDialog.FileName;
-                LoadExcelData(importedFilePath);
-                MessageBox.Show("Đã nhập dữ liệu từ: " + importedFilePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadExcelData(openFileDialog.FileName);
             }
         }
         // logo tìm kiếm
@@ -138,9 +75,9 @@ namespace Dictionary
                 MessageBox.Show("Bạn chưa nhập dữ liệu Excel!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            FixWordForm fixWordForm = new FixWordForm(GetExcelData(), GetImportedFilePath());
+
+            FixWordForm fixWordForm = new FixWordForm(excelData, filePath);
             fixWordForm.ShowDialog();
-            SetExcelData(fixWordForm.GetUpdatedData());
         }
 
         //nút để xóa
