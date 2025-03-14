@@ -12,11 +12,11 @@ namespace Dictionary
         private DataTable excelData;
         private string filePath;
 
-        public FixWordForm(DataTable data, string path)
+        public FixWordForm(DataTable data, string importedFilePath)
         {
             InitializeComponent();
             excelData = data;
-            filePath = path;
+            filePath = importedFilePath;
         }
 
         private void btnDone_Click(object sender, EventArgs e)
@@ -53,6 +53,7 @@ namespace Dictionary
 
         private void SaveToExcel(string filePath)
         {
+            ExcelPackage.LicenseContext = LicenseContext.NonCommercial; // Thêm dòng này để tránh lỗi
             try
             {
                 using (var package = new ExcelPackage(new FileInfo(filePath)))

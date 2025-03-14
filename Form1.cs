@@ -27,46 +27,32 @@ namespace Dictionary
         {
             ApplyButtonDesign(new Button[] { btnImport, btnAdd, btnRemove, btnFix, btnMyWord, btnGame }, 30);
             ApplyButtonDesign(new Button[] { btnCopy, btnSave }, 20);
-
             btnCopy.Image = ResizeImage(Properties.Resources.copy, btnCopy.Width - 15, btnCopy.Height - 15);
         }
-
+        //btn Thêm
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddForm dgl2 = new AddForm();
             dgl2.ShowDialog();
         }
-        // sửa từ lại
-
-        private void btnFix_Click(object sender, EventArgs e)
-        {
-            if (excelData == null)
-            {
-                MessageBox.Show("Bạn chưa nhập dữ liệu Excel!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-            FixWordForm fixWordForm = new FixWordForm(GetExcelData(), GetImportedFilePath());
-            fixWordForm.ShowDialog();
-            SetExcelData(fixWordForm.GetUpdatedData());
-        }
-        // thêm từ
         private DataTable excelData;
         private string importedFilePath;
-        private void btnImport_Click(object sender, EventArgs e)
+        //getter và setter
+        public DataTable GetExcelData()
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog
-            {
-                Filter = "Excel Files|*.xls;*.xlsx",
-                Title = "Chọn file Excel"
-            };
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                importedFilePath = openFileDialog.FileName;
-                LoadExcelData(importedFilePath);
-                MessageBox.Show("Đã nhập dữ liệu từ: " + importedFilePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
+            return excelData;
         }
+        public void SetExcelData(DataTable data)
+        {
+            excelData = data;
+        }
+
+        public string GetImportedFilePath()
+        {
+            return importedFilePath;
+        }
+
+        // thêm từ
         private void LoadExcelData(string filePath)
         {
             try
@@ -102,22 +88,22 @@ namespace Dictionary
                 MessageBox.Show("Lỗi khi đọc file Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        public DataTable GetExcelData()
+        private void btnImport_Click(object sender, EventArgs e)
         {
-            return excelData;
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Excel Files|*.xls;*.xlsx",
+                Title = "Chọn file Excel"
+            };
+
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                importedFilePath = openFileDialog.FileName;
+                LoadExcelData(importedFilePath);
+                MessageBox.Show("Đã nhập dữ liệu từ: " + importedFilePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
-
-        public string GetImportedFilePath()
-        {
-            return importedFilePath;
-        }
-
-        public void SetExcelData(DataTable data)
-        {
-            excelData = data;
-        }
-
-
+        // logo tìm kiếm
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (excelData == null || excelData.Rows.Count == 0)
@@ -144,6 +130,20 @@ namespace Dictionary
             }
         }
 
+        // sửa từ lại
+        private void btnFix_Click(object sender, EventArgs e)
+        {
+            if (excelData == null)
+            {
+                MessageBox.Show("Bạn chưa nhập dữ liệu Excel!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            FixWordForm fixWordForm = new FixWordForm(GetExcelData(), GetImportedFilePath());
+            fixWordForm.ShowDialog();
+            SetExcelData(fixWordForm.GetUpdatedData());
+        }
+
+        //nút để xóa
         private void btnRemove_Click(object sender, EventArgs e)
         {
             RemoveForm removeForm = new RemoveForm();
