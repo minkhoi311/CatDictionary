@@ -12,13 +12,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using ExcelDataReader;
-using ClosedXML.Excel;
 
 namespace Dictionary
 {
     public partial class Form1 : BaseForm
     {
-        private string filePath;
         public Form1()
         {
             InitializeComponent();
@@ -31,43 +29,17 @@ namespace Dictionary
             ApplyButtonDesign(new Button[] { btnCopy, btnSave }, 20);
             btnCopy.Image = ResizeImage(Properties.Resources.copy, btnCopy.Width - 15, btnCopy.Height - 15);
         }
-<<<<<<< HEAD
-        private void btnFix_Click(object sender, EventArgs e)
-        {
-            FixWordForm fixWordForm = new FixWordForm();
-            fixWordForm.ShowDialog();
-=======
         //btn Thêm
         private void btnAdd_Click(object sender, EventArgs e)
         {
             AddForm dgl2 = new AddForm();
             dgl2.ShowDialog();
->>>>>>> KhoiLee
         }
         private DataTable excelData;
         private string importedFilePath;
         //getter và setter
         public DataTable GetExcelData()
         {
-<<<<<<< HEAD
-            OpenFileDialog openFileDialog = new OpenFileDialog
-            {
-                Filter = "Excel Files|*.xls;*.xlsx",
-                Title = "Chọn file Excel"
-            };
-
-            if (openFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                filePath = openFileDialog.FileName;
-                LoadExcelData(filePath);
-                MessageBox.Show("Đã nhập dữ liệu từ: " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
-            
-        }
-
-        
-=======
             return excelData;
         }
         public void SetExcelData(DataTable data)
@@ -81,7 +53,6 @@ namespace Dictionary
         }
 
         // thêm từ
->>>>>>> KhoiLee
         private void LoadExcelData(string filePath)
         {
             try
@@ -177,83 +148,6 @@ namespace Dictionary
         {
             RemoveForm removeForm = new RemoveForm();
             removeForm.ShowDialog();
-        }
-
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(filePath))
-            {
-                MessageBox.Show("Vui lòng chọn file trước khi thêm từ vựng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            // Kiểm tra xem file có tồn tại không
-            if (!File.Exists(filePath))
-            {
-                MessageBox.Show("File Excel không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            AddForm dgl2 = new AddForm();
-            DialogResult result = dgl2.ShowDialog();
-
-
-
-            if (result == DialogResult.OK)
-            {
-
-                string word = dgl2.WordValue;
-                string ipa = dgl2.IpaValue;
-                string mean = dgl2.MeanValue;
-                string ex1 = dgl2.Ex1Value;
-                string ex2 = dgl2.Ex2Value;
-                string ex3 = dgl2.Ex3Value;
-
-                if (excelData != null) 
-                {
-                    DataRow newRow = excelData.NewRow();
-
-                    newRow[0] = word;
-                    newRow[1] = ipa;
-                    newRow[2] = mean;
-                    newRow[3] = ex1;
-                    newRow[4] = ex2;
-                    newRow[5] = ex3;
-
-                    excelData.Rows.Add(newRow);
-                    SaveDataToExcel(filePath);
-                    
-                }
-                dgl2.Close();
-            }
-
-        }
-        private void SaveDataToExcel(string filePath)
-        {
-            try
-            {
-                // Sử dụng ClosedXML để lưu lại dữ liệu vào Excel
-                using (var workbook = new XLWorkbook())
-                {
-                    var worksheet = workbook.Worksheets.Add("Sheet1");
-
-                    // Ghi dữ liệu vào worksheet
-                    for (int i = 0; i < excelData.Rows.Count; i++)
-                    {
-                        for (int j = 0; j < excelData.Columns.Count; j++)
-                        {
-                            var cellValue = excelData.Rows[i][j].ToString();
-                            worksheet.Cell(i + 1, j + 1).SetValue(cellValue);
-                        }
-                    }
-
-                    // Lưu workbook vào file
-                    workbook.SaveAs(filePath);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi lưu dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
         }
     }
 }

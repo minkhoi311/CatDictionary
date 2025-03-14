@@ -67,7 +67,7 @@ namespace Dictionary
             this.btnAdd.BackColor = System.Drawing.Color.LightGray;
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdd.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdd.Location = new System.Drawing.Point(36, 332);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(97, 51);
@@ -81,7 +81,7 @@ namespace Dictionary
             this.btnRemove.BackColor = System.Drawing.Color.LightGray;
             this.btnRemove.FlatAppearance.BorderSize = 0;
             this.btnRemove.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemove.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRemove.Location = new System.Drawing.Point(36, 413);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(97, 51);
@@ -95,7 +95,7 @@ namespace Dictionary
             this.btnFix.BackColor = System.Drawing.Color.LightGray;
             this.btnFix.FlatAppearance.BorderSize = 0;
             this.btnFix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFix.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFix.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFix.Location = new System.Drawing.Point(734, 250);
             this.btnFix.Name = "btnFix";
             this.btnFix.Size = new System.Drawing.Size(97, 51);
@@ -109,7 +109,7 @@ namespace Dictionary
             this.btnMyWord.BackColor = System.Drawing.Color.LightGray;
             this.btnMyWord.FlatAppearance.BorderSize = 0;
             this.btnMyWord.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMyWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMyWord.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMyWord.Location = new System.Drawing.Point(734, 332);
             this.btnMyWord.Name = "btnMyWord";
             this.btnMyWord.Size = new System.Drawing.Size(97, 51);
@@ -122,7 +122,7 @@ namespace Dictionary
             this.btnGame.BackColor = System.Drawing.Color.LightGray;
             this.btnGame.FlatAppearance.BorderSize = 0;
             this.btnGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGame.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGame.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGame.Location = new System.Drawing.Point(734, 413);
             this.btnGame.Name = "btnGame";
             this.btnGame.Size = new System.Drawing.Size(97, 51);
@@ -132,7 +132,7 @@ namespace Dictionary
             // 
             // lbWord
             // 
-            this.lbWord.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWord.Font = new System.Drawing.Font("MS Reference Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbWord.Location = new System.Drawing.Point(145, 95);
             this.lbWord.Name = "lbWord";
             this.lbWord.Size = new System.Drawing.Size(388, 92);
@@ -143,11 +143,11 @@ namespace Dictionary
             // txtSearch
             // 
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSearch.Font = new System.Drawing.Font("MS Reference Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSearch.Location = new System.Drawing.Point(162, 25);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(497, 35);
+            this.txtSearch.Size = new System.Drawing.Size(497, 44);
             this.txtSearch.TabIndex = 0;
             // 
             // btnCopy
@@ -155,7 +155,7 @@ namespace Dictionary
             this.btnCopy.BackColor = System.Drawing.Color.LightGray;
             this.btnCopy.FlatAppearance.BorderSize = 0;
             this.btnCopy.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCopy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCopy.Font = new System.Drawing.Font("MS Reference Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCopy.Location = new System.Drawing.Point(644, 102);
             this.btnCopy.Name = "btnCopy";
             this.btnCopy.Padding = new System.Windows.Forms.Padding(0, 0, 2, 2);
@@ -168,7 +168,7 @@ namespace Dictionary
             this.btnSave.BackColor = System.Drawing.Color.LightGray;
             this.btnSave.FlatAppearance.BorderSize = 0;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSave.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Location = new System.Drawing.Point(628, 146);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(64, 39);
@@ -181,7 +181,7 @@ namespace Dictionary
             this.btnImport.BackColor = System.Drawing.Color.LightGray;
             this.btnImport.FlatAppearance.BorderSize = 0;
             this.btnImport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImport.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImport.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnImport.Location = new System.Drawing.Point(36, 250);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(97, 51);
@@ -194,17 +194,17 @@ namespace Dictionary
             // 
             this.lbIPA.AutoSize = true;
             this.lbIPA.BackColor = System.Drawing.Color.LightGray;
-            this.lbIPA.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIPA.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIPA.Location = new System.Drawing.Point(185, 234);
             this.lbIPA.Name = "lbIPA";
-            this.lbIPA.Size = new System.Drawing.Size(62, 20);
+            this.lbIPA.Size = new System.Drawing.Size(89, 26);
             this.lbIPA.TabIndex = 4;
             this.lbIPA.Text = "/heˈləʊ/";
             // 
             // lbMeaning
             // 
             this.lbMeaning.BackColor = System.Drawing.Color.LightGray;
-            this.lbMeaning.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbMeaning.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbMeaning.Location = new System.Drawing.Point(185, 262);
             this.lbMeaning.Name = "lbMeaning";
             this.lbMeaning.Size = new System.Drawing.Size(507, 54);
@@ -214,7 +214,7 @@ namespace Dictionary
             // lbEX1
             // 
             this.lbEX1.BackColor = System.Drawing.Color.LightGray;
-            this.lbEX1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEX1.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEX1.Location = new System.Drawing.Point(190, 316);
             this.lbEX1.Name = "lbEX1";
             this.lbEX1.Size = new System.Drawing.Size(502, 52);
@@ -224,7 +224,7 @@ namespace Dictionary
             // lbEX2
             // 
             this.lbEX2.BackColor = System.Drawing.Color.LightGray;
-            this.lbEX2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEX2.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEX2.Location = new System.Drawing.Point(190, 368);
             this.lbEX2.Name = "lbEX2";
             this.lbEX2.Size = new System.Drawing.Size(502, 52);
@@ -234,7 +234,7 @@ namespace Dictionary
             // lbEX3
             // 
             this.lbEX3.BackColor = System.Drawing.Color.LightGray;
-            this.lbEX3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEX3.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEX3.Location = new System.Drawing.Point(190, 420);
             this.lbEX3.Name = "lbEX3";
             this.lbEX3.Size = new System.Drawing.Size(502, 52);
@@ -274,7 +274,7 @@ namespace Dictionary
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(868, 518);
@@ -297,7 +297,7 @@ namespace Dictionary
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnFix);
             this.Controls.Add(this.label1);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("MS Reference Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "Form1";
