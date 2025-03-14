@@ -29,17 +29,27 @@ namespace Dictionary
         {
             ApplyButtonDesign(new Button[] { btnImport, btnAdd, btnRemove, btnFix, btnMyWord, btnGame }, 30);
             ApplyButtonDesign(new Button[] { btnCopy, btnSave }, 20);
-
             btnCopy.Image = ResizeImage(Properties.Resources.copy, btnCopy.Width - 15, btnCopy.Height - 15);
         }
+<<<<<<< HEAD
         private void btnFix_Click(object sender, EventArgs e)
         {
             FixWordForm fixWordForm = new FixWordForm();
             fixWordForm.ShowDialog();
+=======
+        //btn Thêm
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            AddForm dgl2 = new AddForm();
+            dgl2.ShowDialog();
+>>>>>>> KhoiLee
         }
         private DataTable excelData;
-        private void btnImport_Click(object sender, EventArgs e)
+        private string importedFilePath;
+        //getter và setter
+        public DataTable GetExcelData()
         {
+<<<<<<< HEAD
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
                 Filter = "Excel Files|*.xls;*.xlsx",
@@ -57,6 +67,21 @@ namespace Dictionary
         }
 
         
+=======
+            return excelData;
+        }
+        public void SetExcelData(DataTable data)
+        {
+            excelData = data;
+        }
+
+        public string GetImportedFilePath()
+        {
+            return importedFilePath;
+        }
+
+        // thêm từ
+>>>>>>> KhoiLee
         private void LoadExcelData(string filePath)
         {
             try
@@ -92,7 +117,22 @@ namespace Dictionary
                 MessageBox.Show("Lỗi khi đọc file Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDialog = new OpenFileDialog
+            {
+                Filter = "Excel Files|*.xls;*.xlsx",
+                Title = "Chọn file Excel"
+            };
 
+            if (openFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                importedFilePath = openFileDialog.FileName;
+                LoadExcelData(importedFilePath);
+                MessageBox.Show("Đã nhập dữ liệu từ: " + importedFilePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        // logo tìm kiếm
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (excelData == null || excelData.Rows.Count == 0)
@@ -119,6 +159,20 @@ namespace Dictionary
             }
         }
 
+        // sửa từ lại
+        private void btnFix_Click(object sender, EventArgs e)
+        {
+            if (excelData == null)
+            {
+                MessageBox.Show("Bạn chưa nhập dữ liệu Excel!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            FixWordForm fixWordForm = new FixWordForm(GetExcelData(), GetImportedFilePath());
+            fixWordForm.ShowDialog();
+            SetExcelData(fixWordForm.GetUpdatedData());
+        }
+
+        //nút để xóa
         private void btnRemove_Click(object sender, EventArgs e)
         {
             RemoveForm removeForm = new RemoveForm();
