@@ -36,13 +36,22 @@ namespace Dictionary
             AddForm dgl2 = new AddForm();
             dgl2.ShowDialog();
         }
+        // sửa từ lại
 
         private void btnFix_Click(object sender, EventArgs e)
         {
-            FixWordForm fixWordForm = new FixWordForm();
+            if (excelData == null)
+            {
+                MessageBox.Show("Bạn chưa nhập dữ liệu Excel!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            FixWordForm fixWordForm = new FixWordForm(GetExcelData(), GetImportedFilePath());
             fixWordForm.ShowDialog();
+            SetExcelData(fixWordForm.GetUpdatedData());
         }
+        // thêm từ
         private DataTable excelData;
+        private string importedFilePath;
         private void btnImport_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
@@ -53,9 +62,9 @@ namespace Dictionary
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                string filePath = openFileDialog.FileName;
-                LoadExcelData(filePath);
-                MessageBox.Show("Đã nhập dữ liệu từ: " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                importedFilePath = openFileDialog.FileName;
+                LoadExcelData(importedFilePath);
+                MessageBox.Show("Đã nhập dữ liệu từ: " + importedFilePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
         private void LoadExcelData(string filePath)
@@ -93,6 +102,21 @@ namespace Dictionary
                 MessageBox.Show("Lỗi khi đọc file Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        public DataTable GetExcelData()
+        {
+            return excelData;
+        }
+
+        public string GetImportedFilePath()
+        {
+            return importedFilePath;
+        }
+
+        public void SetExcelData(DataTable data)
+        {
+            excelData = data;
+        }
+
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {

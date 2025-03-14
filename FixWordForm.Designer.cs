@@ -33,7 +33,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtWordFix = new System.Windows.Forms.TextBox();
+            this.txtOldWord = new System.Windows.Forms.TextBox();
             this.txtIPAFix = new System.Windows.Forms.TextBox();
             this.txtMeanFix = new System.Windows.Forms.TextBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -44,6 +44,8 @@
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.btnDone = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtNewWord = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -58,7 +60,7 @@
             this.label1.BackColor = System.Drawing.SystemColors.ControlDark;
             this.label1.Location = new System.Drawing.Point(109, 142);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(576, 214);
+            this.label1.Size = new System.Drawing.Size(576, 237);
             this.label1.TabIndex = 1;
             // 
             // label2
@@ -75,7 +77,7 @@
             // 
             this.label3.BackColor = System.Drawing.Color.LightGray;
             this.label3.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(120, 169);
+            this.label3.Location = new System.Drawing.Point(120, 152);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(197, 32);
             this.label3.TabIndex = 2;
@@ -86,7 +88,7 @@
             // 
             this.label4.BackColor = System.Drawing.Color.LightGray;
             this.label4.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(120, 216);
+            this.label4.Location = new System.Drawing.Point(120, 246);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(197, 32);
             this.label4.TabIndex = 2;
@@ -97,30 +99,30 @@
             // 
             this.label5.BackColor = System.Drawing.Color.LightGray;
             this.label5.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(120, 267);
+            this.label5.Location = new System.Drawing.Point(120, 292);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(197, 32);
             this.label5.TabIndex = 2;
             this.label5.Text = "Định nghĩa";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // txtWordFix
+            // txtOldWord
             // 
-            this.txtWordFix.Location = new System.Drawing.Point(341, 169);
-            this.txtWordFix.Name = "txtWordFix";
-            this.txtWordFix.Size = new System.Drawing.Size(318, 32);
-            this.txtWordFix.TabIndex = 3;
+            this.txtOldWord.Location = new System.Drawing.Point(341, 152);
+            this.txtOldWord.Name = "txtOldWord";
+            this.txtOldWord.Size = new System.Drawing.Size(318, 32);
+            this.txtOldWord.TabIndex = 3;
             // 
             // txtIPAFix
             // 
-            this.txtIPAFix.Location = new System.Drawing.Point(341, 216);
+            this.txtIPAFix.Location = new System.Drawing.Point(341, 246);
             this.txtIPAFix.Name = "txtIPAFix";
             this.txtIPAFix.Size = new System.Drawing.Size(318, 32);
             this.txtIPAFix.TabIndex = 3;
             // 
             // txtMeanFix
             // 
-            this.txtMeanFix.Location = new System.Drawing.Point(341, 267);
+            this.txtMeanFix.Location = new System.Drawing.Point(341, 291);
             this.txtMeanFix.Name = "txtMeanFix";
             this.txtMeanFix.Size = new System.Drawing.Size(318, 32);
             this.txtMeanFix.TabIndex = 3;
@@ -138,7 +140,7 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Dictionary.Properties.Resources.meow1;
-            this.pictureBox3.Location = new System.Drawing.Point(158, 375);
+            this.pictureBox3.Location = new System.Drawing.Point(158, 392);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(105, 74);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -148,9 +150,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Dictionary.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(672, 344);
+            this.pictureBox2.Location = new System.Drawing.Point(708, 365);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(128, 121);
+            this.pictureBox2.Size = new System.Drawing.Size(80, 91);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -158,7 +160,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Dictionary.Properties.Resources.foot;
-            this.pictureBox1.Location = new System.Drawing.Point(-84, 375);
+            this.pictureBox1.Location = new System.Drawing.Point(-84, 392);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(236, 118);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -188,7 +190,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::Dictionary.Properties.Resources.meo2;
-            this.pictureBox7.Location = new System.Drawing.Point(522, 392);
+            this.pictureBox7.Location = new System.Drawing.Point(600, 408);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(47, 57);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -200,12 +202,31 @@
             this.btnDone.BackColor = System.Drawing.Color.DarkGray;
             this.btnDone.FlatAppearance.BorderSize = 0;
             this.btnDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDone.Location = new System.Drawing.Point(311, 305);
+            this.btnDone.Location = new System.Drawing.Point(311, 329);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(164, 39);
             this.btnDone.TabIndex = 8;
             this.btnDone.Text = "Hoàn Tất";
             this.btnDone.UseVisualStyleBackColor = false;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
+            // 
+            // label6
+            // 
+            this.label6.BackColor = System.Drawing.Color.LightGray;
+            this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(120, 197);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(197, 32);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Từ mới";
+            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtNewWord
+            // 
+            this.txtNewWord.Location = new System.Drawing.Point(341, 197);
+            this.txtNewWord.Name = "txtNewWord";
+            this.txtNewWord.Size = new System.Drawing.Size(318, 32);
+            this.txtNewWord.TabIndex = 3;
             // 
             // FixWordForm
             // 
@@ -221,9 +242,11 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.txtMeanFix);
             this.Controls.Add(this.txtIPAFix);
-            this.Controls.Add(this.txtWordFix);
+            this.Controls.Add(this.txtNewWord);
+            this.Controls.Add(this.txtOldWord);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -234,7 +257,6 @@
             this.Name = "FixWordForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FixWordForm";
-            this.Load += new System.EventHandler(this.FixWordForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -254,7 +276,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtWordFix;
+        private System.Windows.Forms.TextBox txtOldWord;
         private System.Windows.Forms.TextBox txtIPAFix;
         private System.Windows.Forms.TextBox txtMeanFix;
         private System.Windows.Forms.PictureBox pictureBox1;
@@ -265,5 +287,7 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Button btnDone;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtNewWord;
     }
 }
