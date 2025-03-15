@@ -62,6 +62,7 @@
             this.btnDone.TabIndex = 16;
             this.btnDone.Text = "Hoàn Tất";
             this.btnDone.UseVisualStyleBackColor = false;
+            this.btnDone.Click += new System.EventHandler(this.btnDone_Click);
             // 
             // txtEx3
             // 
