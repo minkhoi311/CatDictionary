@@ -1,38 +1,34 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\VINH\\source\\repos\\CatDictionary1\\",
+  "WorkspaceRootPath": "C:\\Users\\VINH\\source\\repos\\CatDictionary10\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|c:\\users\\vinh\\source\\repos\\catdictionary1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|C:\\Users\\VINH\\source\\repos\\CatDictionary10\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|C:\\Users\\VINH\\source\\repos\\CatDictionary1\\addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|c:\\users\\vinh\\source\\repos\\catdictionary10\\addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|C:\\Users\\VINH\\source\\repos\\CatDictionary1\\addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|C:\\Users\\VINH\\source\\repos\\CatDictionary10\\addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|C:\\Users\\VINH\\source\\repos\\CatDictionary1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|C:\\Users\\VINH\\source\\repos\\CatDictionary10\\removeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:removeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|C:\\Users\\VINH\\source\\repos\\CatDictionary1\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|C:\\Users\\VINH\\source\\repos\\CatDictionary1\\removeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|C:\\Users\\VINH\\source\\repos\\CatDictionary10\\removeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:removeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|C:\\Users\\VINH\\source\\repos\\CatDictionary1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|C:\\Users\\VINH\\source\\repos\\CatDictionary10\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|C:\\Users\\VINH\\source\\repos\\CatDictionary1\\removeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:removeform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|C:\\Users\\VINH\\source\\repos\\CatDictionary10\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -42,28 +38,74 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\VINH\\source\\repos\\CatDictionary1\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\VINH\\source\\repos\\CatDictionary1\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAlAAAA",
+              "DocumentIndex": 1,
+              "Title": "AddForm.cs",
+              "DocumentMoniker": "C:\\Users\\VINH\\source\\repos\\CatDictionary10\\AddForm.cs",
+              "RelativeDocumentMoniker": "AddForm.cs",
+              "ToolTip": "C:\\Users\\VINH\\source\\repos\\CatDictionary10\\AddForm.cs",
+              "RelativeToolTip": "AddForm.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAwwAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T15:30:01.549Z",
-              "IsPinned": true
+              "WhenOpened": "2025-03-14T17:04:07.524Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VINH\\source\\repos\\CatDictionary10\\AddForm.cs",
+              "RelativeDocumentMoniker": "AddForm.cs",
+              "ToolTip": "C:\\Users\\VINH\\source\\repos\\CatDictionary10\\AddForm.cs [Design]",
+              "RelativeToolTip": "AddForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-14T17:03:59.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RemoveForm.cs",
+              "DocumentMoniker": "C:\\Users\\VINH\\source\\repos\\CatDictionary10\\RemoveForm.cs",
+              "RelativeDocumentMoniker": "RemoveForm.cs",
+              "ToolTip": "C:\\Users\\VINH\\source\\repos\\CatDictionary10\\RemoveForm.cs",
+              "RelativeToolTip": "RemoveForm.cs",
+              "ViewState": "AQIAACQAAAAAAAAAAAASwDAAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T15:37:33.679Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
+              "Title": "RemoveForm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\VINH\\source\\repos\\CatDictionary10\\RemoveForm.cs",
+              "RelativeDocumentMoniker": "RemoveForm.cs",
+              "ToolTip": "C:\\Users\\VINH\\source\\repos\\CatDictionary10\\RemoveForm.cs [Design]",
+              "RelativeToolTip": "RemoveForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T15:37:21.362Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\VINH\\source\\repos\\CatDictionary10\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\VINH\\source\\repos\\CatDictionary10\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-12T15:30:01.549Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Form1.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\VINH\\source\\repos\\CatDictionary1\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\VINH\\source\\repos\\CatDictionary10\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\VINH\\source\\repos\\CatDictionary1\\Form1.cs [Design]",
+              "ToolTip": "C:\\Users\\VINH\\source\\repos\\CatDictionary10\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-12T07:39:55.311Z",
@@ -71,76 +113,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "AddForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\VINH\\source\\repos\\CatDictionary1\\AddForm.cs",
-              "RelativeDocumentMoniker": "AddForm.cs",
-              "ToolTip": "C:\\Users\\VINH\\source\\repos\\CatDictionary1\\AddForm.cs [Design]",
-              "RelativeToolTip": "AddForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T14:18:29.548Z",
-              "EditorCaption": " [Design]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AddForm.cs",
-              "DocumentMoniker": "C:\\Users\\VINH\\source\\repos\\CatDictionary1\\AddForm.cs",
-              "RelativeDocumentMoniker": "AddForm.cs",
-              "ToolTip": "C:\\Users\\VINH\\source\\repos\\CatDictionary1\\AddForm.cs",
-              "RelativeToolTip": "AddForm.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAYwCEAAABWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T14:18:31.734Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\VINH\\source\\repos\\CatDictionary1\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\VINH\\source\\repos\\CatDictionary10\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
-              "ToolTip": "C:\\Users\\VINH\\source\\repos\\CatDictionary1\\Form1.cs",
+              "ToolTip": "C:\\Users\\VINH\\source\\repos\\CatDictionary10\\Form1.cs",
               "RelativeToolTip": "Form1.cs",
-              "ViewState": "AQIAALUAAAAAAAAAAAAuwCMAAAAAAAAA",
+              "ViewState": "AQIAALAAAAAAAAAAAAAvwBsAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T14:44:24.333Z",
+              "WhenOpened": "2025-03-12T07:39:39.328Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RemoveForm.cs",
-              "DocumentMoniker": "C:\\Users\\VINH\\source\\repos\\CatDictionary1\\RemoveForm.cs",
-              "RelativeDocumentMoniker": "RemoveForm.cs",
-              "ToolTip": "C:\\Users\\VINH\\source\\repos\\CatDictionary1\\RemoveForm.cs",
-              "RelativeToolTip": "RemoveForm.cs",
-              "ViewState": "AQIAAB4AAAAAAAAAAAASwDAAAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T15:37:33.679Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\VINH\\source\\repos\\CatDictionary1\\Form1.Designer.cs",
-              "RelativeDocumentMoniker": "Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\VINH\\source\\repos\\CatDictionary1\\Form1.Designer.cs",
-              "RelativeToolTip": "Form1.Designer.cs",
-              "ViewState": "AQIAAI4AAAAAAAAAAAAkwE0AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-14T15:44:12.546Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RemoveForm.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\VINH\\source\\repos\\CatDictionary1\\RemoveForm.cs",
-              "RelativeDocumentMoniker": "RemoveForm.cs",
-              "ToolTip": "C:\\Users\\VINH\\source\\repos\\CatDictionary1\\RemoveForm.cs [Design]",
-              "RelativeToolTip": "RemoveForm.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-12T15:37:21.362Z"
             }
           ]
         }
