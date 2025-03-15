@@ -130,3 +130,5 @@ C:\SourceBaiTapRoot\C#\BT\CatDictionary\bin\Debug\System.Memory.xml
 C:\SourceBaiTapRoot\C#\BT\CatDictionary\bin\Debug\System.Numerics.Vectors.xml
 C:\SourceBaiTapRoot\C#\BT\CatDictionary\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\SourceBaiTapRoot\C#\BT\CatDictionary\obj\Debug\Dictionary.csproj.Up2Date
+C:\SourceBaiTapRoot\C#\BT\CatDictionary\obj\Debug\Dictionary.MyWordForm.resources
+C:\SourceBaiTapRoot\C#\BT\CatDictionary\obj\Debug\Dictionary.GameForm.resources

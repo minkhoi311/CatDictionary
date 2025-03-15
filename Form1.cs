@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
@@ -100,6 +101,55 @@ namespace Dictionary
             else
             {
                 MessageBox.Show("Không có nội dung để sao chép!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        private Dictionary<string, (string ipa, string meaning)> savedWord = new Dictionary<string, (string, string)>();
+        public Dictionary<string, (string ipa, string meaning)> SavedWord
+        {
+            get { return savedWord; }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            string word = lbWord.Text.Trim().ToLower();
+            string ipa = lbIPA.Text.Trim();
+            string mean = lbMeaning.Text;
+            if(!string.IsNullOrEmpty(word) && !savedWord.ContainsKey(word))
+            {
+                savedWord[word] = (ipa, mean); 
+                MessageBox.Show($"Đã lưu từ: {word}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (savedWord.ContainsKey(word))
+            {
+                MessageBox.Show("Từ này đã được lưu trước đó!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                MessageBox.Show("Không có từ để lưu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void btnMyWord_Click(object sender, EventArgs e)
+        {
+            MyWordForm myWordForm = new MyWordForm(this);//gọi phần form1
+            myWordForm.ShowDialog();
+        }
+
+        private void btnGame_Click(object sender, EventArgs e)
+        {
+            if (savedWord.Count == 0)
+            {
+                MessageBox.Show("Bạn chưa lưu từ nào để chơi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            try
+            {
+                GameForm gameForm = new GameForm(this);
+                gameForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+
             }
         }
     }

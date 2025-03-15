@@ -116,6 +116,7 @@ namespace Dictionary
             this.btnMyWord.TabIndex = 2;
             this.btnMyWord.Text = "MyWord";
             this.btnMyWord.UseVisualStyleBackColor = false;
+            this.btnMyWord.Click += new System.EventHandler(this.btnMyWord_Click);
             // 
             // btnGame
             // 
@@ -129,6 +130,7 @@ namespace Dictionary
             this.btnGame.TabIndex = 3;
             this.btnGame.Text = "Games";
             this.btnGame.UseVisualStyleBackColor = false;
+            this.btnGame.Click += new System.EventHandler(this.btnGame_Click);
             // 
             // lbWord
             // 
@@ -176,6 +178,7 @@ namespace Dictionary
             this.btnSave.TabIndex = 6;
             this.btnSave.Text = "save";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnImport
             // 
