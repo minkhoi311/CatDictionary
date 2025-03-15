@@ -86,5 +86,21 @@ namespace Dictionary
             RemoveForm removeForm = new RemoveForm();
             removeForm.ShowDialog();
         }
+        //nút copy từ hiện tại
+        [STAThread] // Cần thiết cho Clipboard hoạt động đúng
+        private void btnCopy_Click(object sender, EventArgs e)
+        {
+            string textToCopy = lbWord.Text.Trim(); // Loại bỏ khoảng trắng thừa nếu có
+
+            if (!string.IsNullOrEmpty(textToCopy)) // Kiểm tra nếu lbWord có nội dung
+            {
+                Clipboard.SetText(textToCopy);
+                MessageBox.Show($"Đã sao chép '{textToCopy}' thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Không có nội dung để sao chép!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
     }
 }

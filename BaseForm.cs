@@ -28,7 +28,7 @@ namespace Dictionary
             }
         }
 
-        // hợp thức hóa ảnh
+        // Chỉnh kích thước ảnh
         protected Image ResizeImage(Image img, int width, int height)
         {
             Bitmap resized = new Bitmap(width, height);
@@ -73,7 +73,7 @@ namespace Dictionary
                 }
             }
         }
-        /// import excel
+        // Lưu trữ dữ liệu từ file Excel
         protected DataTable excelData;
         protected string filePath;
         public void LoadExcelData(string filePath)
@@ -95,9 +95,8 @@ namespace Dictionary
                             ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = false }
                         });
 
-                        excelData = result.Tables[0];
-                        this.filePath = filePath;
-
+                        excelData = result.Tables[0]; // Lưu dữ liệu vào biến
+                        this.filePath = filePath; // Lưu đường dẫn file
                         MessageBox.Show("Dữ liệu đã được nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                 }
@@ -107,7 +106,7 @@ namespace Dictionary
                 MessageBox.Show("Lỗi khi đọc file Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        // lưu excel
+        // Lưu dữ liệu trở lại file Excel
         public void SaveToExcel()
         {
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;

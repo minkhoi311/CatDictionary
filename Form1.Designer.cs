@@ -162,6 +162,7 @@ namespace Dictionary
             this.btnCopy.Size = new System.Drawing.Size(37, 39);
             this.btnCopy.TabIndex = 5;
             this.btnCopy.UseVisualStyleBackColor = false;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
             // 
             // btnSave
             // 
