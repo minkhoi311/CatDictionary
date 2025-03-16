@@ -149,7 +149,7 @@ namespace Dictionary
             }
             catch (Exception ex)
             {
-
+                //bắt lỗi
             }
         }
     }

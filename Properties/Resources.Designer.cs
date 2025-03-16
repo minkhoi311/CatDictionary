@@ -63,6 +63,46 @@ namespace Dictionary.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bigFoot {
+            get {
+                object obj = ResourceManager.GetObject("bigFoot", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap catLaying {
+            get {
+                object obj = ResourceManager.GetObject("catLaying", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap catLeft {
+            get {
+                object obj = ResourceManager.GetObject("catLeft", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap catRight {
+            get {
+                object obj = ResourceManager.GetObject("catRight", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap copy {
             get {
                 object obj = ResourceManager.GetObject("copy", resourceCulture);
@@ -86,6 +126,16 @@ namespace Dictionary.Properties {
         internal static System.Drawing.Bitmap foot {
             get {
                 object obj = ResourceManager.GetObject("foot", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap foot1 {
+            get {
+                object obj = ResourceManager.GetObject("foot1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
