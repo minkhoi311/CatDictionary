@@ -115,6 +115,12 @@
     <Compile Include="GameForm.Designer.cs">
       <DependentUpon>GameForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Loading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Loading.Designer.cs">
+      <DependentUpon>Loading.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyWordForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GameForm.resx">
       <DependentUpon>GameForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Loading.resx">
+      <DependentUpon>Loading.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MyWordForm.resx">
       <DependentUpon>MyWordForm.cs</DependentUpon>
@@ -174,6 +183,11 @@
   <ItemGroup>
     <Content Include="Resources\meo21.png" />
     <Content Include="Resources\meow11.png" />
+    <None Include="Resources\picture\catLaying.png" />
+    <None Include="Resources\picture\foot.png" />
+    <None Include="Resources\picture\bigFoot.png" />
+    <None Include="Resources\picture\catRight.png" />
+    <None Include="Resources\picture\catLeft.png" />
     <None Include="Resources\share.png" />
     <None Include="Resources\search.png" />
     <None Include="Resources\logo.png" />
@@ -183,7 +197,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\excel\" />
-    <Folder Include="Resources\picture\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

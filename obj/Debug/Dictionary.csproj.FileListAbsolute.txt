@@ -132,3 +132,4 @@ C:\SourceBaiTapRoot\C#\BT\CatDictionary\bin\Debug\System.Runtime.CompilerService
 C:\SourceBaiTapRoot\C#\BT\CatDictionary\obj\Debug\Dictionary.csproj.Up2Date
 C:\SourceBaiTapRoot\C#\BT\CatDictionary\obj\Debug\Dictionary.MyWordForm.resources
 C:\SourceBaiTapRoot\C#\BT\CatDictionary\obj\Debug\Dictionary.GameForm.resources
+C:\SourceBaiTapRoot\C#\BT\CatDictionary\obj\Debug\Dictionary.Loading.resources

@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\SourceBaiTapRoot\\C#\\BT\\CatDictionary\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|C:\\SourceBaiTapRoot\\C#\\BT\\CatDictionary\\addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|c:\\sourcebaitaproot\\c#\\bt\\catdictionary\\addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|c:\\sourcebaitaproot\\c#\\bt\\catdictionary\\loading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:loading.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|C:\\SourceBaiTapRoot\\C#\\BT\\CatDictionary\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|C:\\SourceBaiTapRoot\\C#\\BT\\CatDictionary\\addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|c:\\sourcebaitaproot\\c#\\bt\\catdictionary\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|c:\\sourcebaitaproot\\c#\\bt\\catdictionary\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|c:\\sourcebaitaproot\\c#\\bt\\catdictionary\\gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:gameform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|c:\\sourcebaitaproot\\c#\\bt\\catdictionary\\addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29C100FE-5E10-499D-8324-7609BC5E4D01}|Dictionary.csproj|solutionrelative:addform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,11 +38,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\SourceBaiTapRoot\\C#\\BT\\CatDictionary\\Form1.cs",
+              "RelativeDocumentMoniker": "Form1.cs",
+              "ToolTip": "C:\\SourceBaiTapRoot\\C#\\BT\\CatDictionary\\Form1.cs",
+              "RelativeToolTip": "Form1.cs",
+              "ViewState": "AQIAAIIAAAAAAAAAAAAmwJQAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T18:54:53.133Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\SourceBaiTapRoot\\C#\\BT\\CatDictionary\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\SourceBaiTapRoot\\C#\\BT\\CatDictionary\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T18:47:33.253Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "AddForm.cs",
               "DocumentMoniker": "C:\\SourceBaiTapRoot\\C#\\BT\\CatDictionary\\AddForm.cs",
               "RelativeDocumentMoniker": "AddForm.cs",
@@ -39,7 +81,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "AddForm.cs [Design]",
               "DocumentMoniker": "C:\\SourceBaiTapRoot\\C#\\BT\\CatDictionary\\AddForm.cs",
               "RelativeDocumentMoniker": "AddForm.cs",
@@ -51,14 +93,39 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Form1.cs [Design]",
               "DocumentMoniker": "C:\\SourceBaiTapRoot\\C#\\BT\\CatDictionary\\Form1.cs",
               "RelativeDocumentMoniker": "Form1.cs",
               "ToolTip": "C:\\SourceBaiTapRoot\\C#\\BT\\CatDictionary\\Form1.cs [Design]",
               "RelativeToolTip": "Form1.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-15T13:38:40.588Z"
+              "WhenOpened": "2025-03-15T13:38:40.588Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Loading.cs [Design]",
+              "DocumentMoniker": "C:\\SourceBaiTapRoot\\C#\\BT\\CatDictionary\\Loading.cs",
+              "RelativeDocumentMoniker": "Loading.cs",
+              "ToolTip": "C:\\SourceBaiTapRoot\\C#\\BT\\CatDictionary\\Loading.cs [Design]",
+              "RelativeToolTip": "Loading.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T18:42:21.41Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "GameForm.cs [Design]",
+              "DocumentMoniker": "C:\\SourceBaiTapRoot\\C#\\BT\\CatDictionary\\GameForm.cs",
+              "RelativeDocumentMoniker": "GameForm.cs",
+              "ToolTip": "C:\\SourceBaiTapRoot\\C#\\BT\\CatDictionary\\GameForm.cs [Design]",
+              "RelativeToolTip": "GameForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-16T18:38:19.921Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }
