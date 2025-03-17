@@ -11,13 +11,10 @@ namespace Dictionary
         public Form1()
         {
             InitializeComponent();
-            label1.Paint += Label_Paint;
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
-            ApplyButtonDesign(new Button[] { btnImport, btnAdd, btnRemove, btnFix, btnMyWord, btnGame }, 30);
-            ApplyButtonDesign(new Button[] { btnCopy, btnSave }, 20);
             btnCopy.Image = ResizeImage(Properties.Resources.copy, btnCopy.Width - 15, btnCopy.Height - 15);
         }
         //btn Thêm

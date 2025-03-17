@@ -46,9 +46,5 @@ namespace Dictionary
             }
         }
 
-        private void RemoveForm_Load(object sender, EventArgs e)
-        {
-            ApplyButtonDesign(new Button[] { btnXoa }, 30);
-        }
     }
 }

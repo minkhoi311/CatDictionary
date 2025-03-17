@@ -194,7 +194,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Dictionary.Properties.Resources.meow1;
+            this.pictureBox3.Image = global::Dictionary.Properties.Resources.logo;
             this.pictureBox3.Location = new System.Drawing.Point(741, 441);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(121, 75);
@@ -214,7 +214,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::Dictionary.Properties.Resources.meo2;
+            this.pictureBox6.Image = global::Dictionary.Properties.Resources.bigFoot;
             this.pictureBox6.Location = new System.Drawing.Point(12, 419);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(47, 57);

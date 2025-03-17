@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbWord = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -38,17 +39,26 @@
             this.btnConfirm = new System.Windows.Forms.Button();
             this.lbAnnouce = new System.Windows.Forms.Label();
             this.btnContinue = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
             // 
             // lbWord
             // 
-            this.lbWord.Font = new System.Drawing.Font("MS Reference Sans Serif", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbWord.Location = new System.Drawing.Point(107, -2);
+            this.lbWord.Font = new System.Drawing.Font("MS Reference Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbWord.Location = new System.Drawing.Point(-4, -2);
             this.lbWord.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.lbWord.Name = "lbWord";
-            this.lbWord.Size = new System.Drawing.Size(583, 81);
+            this.lbWord.Size = new System.Drawing.Size(801, 91);
             this.lbWord.TabIndex = 6;
-            this.lbWord.Text = "Trò Chơi Đoán Từ";
+            this.lbWord.Text = "  Trò Chơi Đoán Từ  ";
             this.lbWord.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label1
@@ -137,20 +147,73 @@
             // 
             // btnContinue
             // 
+            this.btnContinue.BackColor = System.Drawing.Color.DarkGray;
+            this.btnContinue.FlatAppearance.BorderSize = 0;
             this.btnContinue.Location = new System.Drawing.Point(308, 397);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(153, 51);
             this.btnContinue.TabIndex = 8;
             this.btnContinue.Text = "Tiếp Tục";
-            this.btnContinue.UseVisualStyleBackColor = true;
+            this.btnContinue.UseVisualStyleBackColor = false;
             this.btnContinue.Visible = false;
             this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Dictionary.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(607, 368);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(233, 175);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::Dictionary.Properties.Resources.foot;
+            this.pictureBox2.Location = new System.Drawing.Point(33, 373);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(243, 181);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 10;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Image = global::Dictionary.Properties.Resources.bigFoot;
+            this.pictureBox3.Location = new System.Drawing.Point(726, 228);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(57, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 11;
+            this.pictureBox3.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = global::Dictionary.Properties.Resources.bigFoot;
+            this.pictureBox4.Location = new System.Drawing.Point(12, 228);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(57, 50);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 11;
+            this.pictureBox4.TabStop = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // GameForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(795, 494);
+            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.txtAns);
@@ -167,6 +230,10 @@
             this.Name = "GameForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "GameForm";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -184,5 +251,10 @@
         private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.Label lbAnnouce;
         private System.Windows.Forms.Button btnContinue;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Timer timer1;
     }
 }
