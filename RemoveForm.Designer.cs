@@ -30,7 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.btnXoa = new System.Windows.Forms.Button();
             this.lbTuXoa = new System.Windows.Forms.Label();
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
@@ -38,6 +37,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.listView1 = new System.Windows.Forms.ListView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -50,37 +50,20 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(825, 103);
+            this.label1.Size = new System.Drawing.Size(825, 89);
             this.label1.TabIndex = 0;
             this.label1.Text = "Xóa Từ Vựng";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 29;
-            this.listBox1.Items.AddRange(new object[] {
-            "yellow ",
-            "blue",
-            "green",
-            "red",
-            "pink",
-            "black"});
-            this.listBox1.Location = new System.Drawing.Point(128, 106);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(569, 207);
-            this.listBox1.TabIndex = 1;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
             // btnXoa
             // 
-            this.btnXoa.BackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnXoa.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.btnXoa.FlatAppearance.BorderSize = 0;
             this.btnXoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoa.Location = new System.Drawing.Point(462, 362);
+            this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Location = new System.Drawing.Point(579, 377);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(198, 52);
+            this.btnXoa.Size = new System.Drawing.Size(138, 46);
             this.btnXoa.TabIndex = 2;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -89,11 +72,11 @@
             // lbTuXoa
             // 
             this.lbTuXoa.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lbTuXoa.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbTuXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTuXoa.Location = new System.Drawing.Point(170, 362);
+            this.lbTuXoa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lbTuXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTuXoa.Location = new System.Drawing.Point(139, 371);
             this.lbTuXoa.Name = "lbTuXoa";
-            this.lbTuXoa.Size = new System.Drawing.Size(234, 52);
+            this.lbTuXoa.Size = new System.Drawing.Size(422, 52);
             this.lbTuXoa.TabIndex = 3;
             this.lbTuXoa.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -106,7 +89,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = global::Dictionary.Properties.Resources.meow1;
+            this.pictureBox2.Image = global::Dictionary.Properties.Resources.catLaying;
             this.pictureBox2.Location = new System.Drawing.Point(687, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(108, 88);
@@ -117,17 +100,17 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Dictionary.Properties.Resources.foot;
-            this.pictureBox3.Location = new System.Drawing.Point(10, 317);
+            this.pictureBox3.Location = new System.Drawing.Point(-39, -56);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(106, 111);
+            this.pictureBox3.Size = new System.Drawing.Size(258, 214);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 6;
             this.pictureBox3.TabStop = false;
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::Dictionary.Properties.Resources.meo2;
-            this.pictureBox4.Location = new System.Drawing.Point(718, 336);
+            this.pictureBox4.Image = global::Dictionary.Properties.Resources.bigFoot;
+            this.pictureBox4.Location = new System.Drawing.Point(742, 362);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(53, 61);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -136,30 +119,44 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Dictionary.Properties.Resources.meo2;
-            this.pictureBox1.Location = new System.Drawing.Point(63, 28);
+            this.pictureBox1.Image = global::Dictionary.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(-11, 327);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(53, 61);
+            this.pictureBox1.Size = new System.Drawing.Size(128, 143);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
+            // listView1
+            // 
+            this.listView1.GridLines = true;
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(46, 92);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(732, 252);
+            this.listView1.TabIndex = 7;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            // 
             // RemoveForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(825, 465);
+            this.ClientSize = new System.Drawing.Size(825, 435);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.lbTuXoa);
             this.Controls.Add(this.btnXoa);
-            this.Controls.Add(this.listBox1);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(6);
+            this.MaximizeBox = false;
             this.Name = "RemoveForm";
             this.Text = "Remove";
             this.Load += new System.EventHandler(this.RemoveForm_Load);
@@ -174,7 +171,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Label lbTuXoa;
         private System.Windows.Forms.ImageList imageList1;
@@ -182,5 +178,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ListView listView1;
     }
 }
