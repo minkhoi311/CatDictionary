@@ -46,5 +46,8 @@ namespace Dictionary
             }
         }
 
+        private void RemoveForm_Load(object sender, EventArgs e)
+        {
+        }
     }
 }
