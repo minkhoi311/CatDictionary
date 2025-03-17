@@ -16,7 +16,7 @@ namespace Dictionary
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Loading());
+            Application.Run(new Form1());
         }
     }
 }

@@ -1,30 +1,43 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
+using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Text;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using ExcelDataReader;
+using ClosedXML.Excel;
 
 namespace Dictionary
 {
     public partial class Form1 : BaseForm
     {
+        private string filePath;
         public Form1()
         {
             InitializeComponent();
+            label1.Paint += Label_Paint;
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
         {
+            ApplyButtonDesign(new Button[] { btnImport, btnAdd, btnRemove, btnFix, btnMyWord, btnGame }, 30);
+            ApplyButtonDesign(new Button[] { btnCopy, btnSave }, 20);
+
             btnCopy.Image = ResizeImage(Properties.Resources.copy, btnCopy.Width - 15, btnCopy.Height - 15);
         }
-        //btn Thêm
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnFix_Click(object sender, EventArgs e)
         {
-            AddForm dgl2 = new AddForm();
-            dgl2.ShowDialog();
+            FixWordForm fixWordForm = new FixWordForm();
+            fixWordForm.ShowDialog();
         }
-
-        // thêm từ
+        private DataTable excelData;
         private void btnImport_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
@@ -35,10 +48,51 @@ namespace Dictionary
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                LoadExcelData(openFileDialog.FileName);
+                filePath = openFileDialog.FileName;
+                LoadExcelData(filePath);
+                MessageBox.Show("Đã nhập dữ liệu từ: " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            
+        }
+
+        
+        private void LoadExcelData(string filePath)
+        {
+            try
+            {
+                if (!File.Exists(filePath))
+                {
+                    MessageBox.Show("File Excel không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
+                {
+                    using (var reader = ExcelReaderFactory.CreateReader(stream))
+                    {
+                        var result = reader.AsDataSet(new ExcelDataSetConfiguration()
+                        {
+                            ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = false }
+                        });
+                        excelData = result.Tables[0];
+                        if (excelData.Rows.Count == 0)
+                        {
+                            MessageBox.Show("File Excel không có dữ liệu!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Dữ liệu đã được nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi đọc file Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        // logo tìm kiếm
+
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (excelData == null || excelData.Rows.Count == 0)
@@ -65,88 +119,86 @@ namespace Dictionary
             }
         }
 
-        // sửa từ lại
-        private void btnFix_Click(object sender, EventArgs e)
-        {
-            if (excelData == null)
-            {
-                MessageBox.Show("Bạn chưa nhập dữ liệu Excel!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            FixWordForm fixWordForm = new FixWordForm(excelData, filePath);
-            fixWordForm.ShowDialog();
-        }
-
-        //nút để xóa
         private void btnRemove_Click(object sender, EventArgs e)
         {
             RemoveForm removeForm = new RemoveForm(excelData, filePath);
             removeForm.ShowDialog();
         }
-        //nút copy từ hiện tại
-        [STAThread] // Cần thiết cho Clipboard hoạt động đúng
-        private void btnCopy_Click(object sender, EventArgs e)
-        {
-            string textToCopy = lbWord.Text.Trim(); // Loại bỏ khoảng trắng thừa nếu có
 
-            if (!string.IsNullOrEmpty(textToCopy)) // Kiểm tra nếu lbWord có nội dung
-            {
-                Clipboard.SetText(textToCopy);
-                MessageBox.Show($"Đã sao chép '{textToCopy}' thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Không có nội dung để sao chép!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-        private Dictionary<string, (string ipa, string meaning)> savedWord = new Dictionary<string, (string, string)>();
-        public Dictionary<string, (string ipa, string meaning)> SavedWord
+        private void btnAdd_Click(object sender, EventArgs e)
         {
-            get { return savedWord; }
-        }
-
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            string word = lbWord.Text.Trim().ToLower();
-            string ipa = lbIPA.Text.Trim();
-            string mean = lbMeaning.Text;
-            if(!string.IsNullOrEmpty(word) && !savedWord.ContainsKey(word))
+            if (string.IsNullOrEmpty(filePath))
             {
-                savedWord[word] = (ipa, mean); 
-                MessageBox.Show($"Đã lưu từ: {word}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else if (savedWord.ContainsKey(word))
-            {
-                MessageBox.Show("Từ này đã được lưu trước đó!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            else
-            {
-                MessageBox.Show("Không có từ để lưu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }
-
-        private void btnMyWord_Click(object sender, EventArgs e)
-        {
-            MyWordForm myWordForm = new MyWordForm(this);//gọi phần form1
-            myWordForm.ShowDialog();
-        }
-
-        private void btnGame_Click(object sender, EventArgs e)
-        {
-            if (savedWord.Count == 0)
-            {
-                MessageBox.Show("Bạn chưa lưu từ nào để chơi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng chọn file trước khi thêm từ vựng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
+            // Kiểm tra xem file có tồn tại không
+            if (!File.Exists(filePath))
+            {
+                MessageBox.Show("File Excel không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            AddForm dgl2 = new AddForm();
+            DialogResult result = dgl2.ShowDialog();
+
+
+
+            if (result == DialogResult.OK)
+            {
+
+                string word = dgl2.WordValue;
+                string ipa = dgl2.IpaValue;
+                string mean = dgl2.MeanValue;
+                string ex1 = dgl2.Ex1Value;
+                string ex2 = dgl2.Ex2Value;
+                string ex3 = dgl2.Ex3Value;
+
+                if (excelData != null) 
+                {
+                    DataRow newRow = excelData.NewRow();
+
+                    newRow[0] = word;
+                    newRow[1] = ipa;
+                    newRow[2] = mean;
+                    newRow[3] = ex1;
+                    newRow[4] = ex2;
+                    newRow[5] = ex3;
+
+                    excelData.Rows.Add(newRow);
+                    SaveDataToExcel(filePath);
+                    
+                }
+                dgl2.Close();
+            }
+
+        }
+        private void SaveDataToExcel(string filePath)
+        {
             try
             {
-                GameForm gameForm = new GameForm(this);
-                gameForm.ShowDialog();
+                // Sử dụng ClosedXML để lưu lại dữ liệu vào Excel
+                using (var workbook = new XLWorkbook())
+                {
+                    var worksheet = workbook.Worksheets.Add("Sheet1");
+
+                    // Ghi dữ liệu vào worksheet
+                    for (int i = 0; i < excelData.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < excelData.Columns.Count; j++)
+                        {
+                            var cellValue = excelData.Rows[i][j].ToString();
+                            worksheet.Cell(i + 1, j + 1).SetValue(cellValue);
+                        }
+                    }
+
+                    // Lưu workbook vào file
+                    workbook.SaveAs(filePath);
+                }
             }
             catch (Exception ex)
             {
-                //bắt lỗi
+                MessageBox.Show("Lỗi khi lưu dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

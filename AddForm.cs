@@ -25,34 +25,30 @@ namespace Dictionary
         
         private void AddForm_Load(object sender, EventArgs e)
         {
-
+            ApplyButtonDesign(new Button[] { btnDone }, 30);
         }
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtWord.Text) || string.IsNullOrWhiteSpace(txtDefinition.Text))
-            {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin từ vựng và nghĩa!", "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
+                if (MessageBox.Show("Bạn có chắc muốn thêm từ vựng này vào danh sách?", "Xác nhận",
+               MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    WordValue = txtWord.Text;
+                    IpaValue = txtIPA.Text;
+                    MeanValue = txtDefinition.Text;
+                    Ex1Value = txtEx1.Text;
+                    Ex2Value = txtEx2.Text;
+                    Ex3Value = txtEx3.Text;
 
-            if (MessageBox.Show("Bạn có chắc muốn thêm từ vựng này vào danh sách?", "Xác nhận",
-                MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
-            {
-                WordValue = txtWord.Text.Trim();
-                IpaValue = txtIPA.Text.Trim();
-                MeanValue = txtDefinition.Text.Trim();
-                Ex1Value = txtEx1.Text.Trim();
-                Ex2Value = txtEx2.Text.Trim();
-                Ex3Value = txtEx3.Text.Trim();
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
 
-                MessageBox.Show("Thêm từ vựng thành công!", "Thông báo!",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Thêm từ vựng thành công!", "Thông báo!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
+                    
+                }
         }
+
     }
 }
