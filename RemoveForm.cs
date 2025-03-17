@@ -17,8 +17,17 @@ namespace Dictionary
             InitializeComponent();
             this.excelData = data;
             this.filePath = path;
+
+            listView1.View = View.Details;
+            listView1.GridLines = true;
+
+            int totalWidth = listView1.ClientSize.Width;
+            listView1.Columns.Add("Word", (int)(totalWidth * 0.2));
+            listView1.Columns.Add("IPA", (int)(totalWidth * 0.2), HorizontalAlignment.Center);
+            listView1.Columns.Add("Meaning", (int)(totalWidth * 0.6));
+
         }
-        
+
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
@@ -55,13 +64,6 @@ namespace Dictionary
         private void loadDataToList()
         {
             listView1.Items.Clear();
-
-            listView1.View = View.Details;
-            listView1.GridLines = true;
-
-            listView1.Columns.Add("Word", 150);
-            listView1.Columns.Add("IPA", 100, HorizontalAlignment.Center);
-            listView1.Columns.Add("Meaning", 250);
 
             ListViewItem item = null;
             foreach(var row in excelData.AsEnumerable())
