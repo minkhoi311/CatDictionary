@@ -68,5 +68,12 @@ namespace Dictionary
             btnContinue.Visible = false;
             LoadNewWord();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            string lbForm = lbWord.Text;
+            lbForm = lbForm.Substring(1) + lbForm[0];
+            lbWord.Text = lbForm;
+        }
     }
 }

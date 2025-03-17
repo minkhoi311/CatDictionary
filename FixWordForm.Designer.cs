@@ -129,7 +129,7 @@
             // 
             // pictureBox4
             // 
-            this.pictureBox4.Image = global::Dictionary.Properties.Resources.meo2;
+            this.pictureBox4.Image = global::Dictionary.Properties.Resources.bigFoot;
             this.pictureBox4.Location = new System.Drawing.Point(708, 12);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(74, 86);
@@ -139,7 +139,7 @@
             // 
             // pictureBox3
             // 
-            this.pictureBox3.Image = global::Dictionary.Properties.Resources.meow1;
+            this.pictureBox3.Image = global::Dictionary.Properties.Resources.catLaying;
             this.pictureBox3.Location = new System.Drawing.Point(158, 392);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(105, 74);
@@ -150,9 +150,9 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Dictionary.Properties.Resources.logo;
-            this.pictureBox2.Location = new System.Drawing.Point(708, 365);
+            this.pictureBox2.Location = new System.Drawing.Point(691, 355);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(80, 91);
+            this.pictureBox2.Size = new System.Drawing.Size(97, 101);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 5;
             this.pictureBox2.TabStop = false;
@@ -169,7 +169,7 @@
             // 
             // pictureBox5
             // 
-            this.pictureBox5.Image = global::Dictionary.Properties.Resources.meo2;
+            this.pictureBox5.Image = global::Dictionary.Properties.Resources.bigFoot;
             this.pictureBox5.Location = new System.Drawing.Point(12, 115);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(74, 86);
@@ -179,7 +179,7 @@
             // 
             // pictureBox6
             // 
-            this.pictureBox6.Image = global::Dictionary.Properties.Resources.meo2;
+            this.pictureBox6.Image = global::Dictionary.Properties.Resources.bigFoot;
             this.pictureBox6.Location = new System.Drawing.Point(735, 267);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(47, 57);
@@ -189,7 +189,7 @@
             // 
             // pictureBox7
             // 
-            this.pictureBox7.Image = global::Dictionary.Properties.Resources.meo2;
+            this.pictureBox7.Image = global::Dictionary.Properties.Resources.bigFoot;
             this.pictureBox7.Location = new System.Drawing.Point(600, 408);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(47, 57);
@@ -202,7 +202,7 @@
             this.btnDone.BackColor = System.Drawing.Color.DarkGray;
             this.btnDone.FlatAppearance.BorderSize = 0;
             this.btnDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDone.Location = new System.Drawing.Point(311, 329);
+            this.btnDone.Location = new System.Drawing.Point(318, 329);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(164, 39);
             this.btnDone.TabIndex = 8;
