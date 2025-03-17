@@ -96,9 +96,5 @@ namespace Dictionary
             loadDataToList();
         }
 
-        private void RemoveForm_Load(object sender, EventArgs e)
-        {
-            ApplyButtonDesign(new Button[] { btnXoa }, 30);
-        }
     }
 }

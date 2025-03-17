@@ -1,0 +1,6 @@
+C:\SourceBaiTapRoot\C#\BT\CatDictionary\obj\Debug\Dictionary.csproj.AssemblyReference.cache
+C:\SourceBaiTapRoot\C#\BT\CatDictionary\obj\Debug\Dictionary.AddForm.resources
+C:\SourceBaiTapRoot\C#\BT\CatDictionary\obj\Debug\Dictionary.FixWordForm.resources
+C:\SourceBaiTapRoot\C#\BT\CatDictionary\obj\Debug\Dictionary.Form1.resources
+C:\SourceBaiTapRoot\C#\BT\CatDictionary\obj\Debug\Dictionary.RemoveForm.resources
+C:\SourceBaiTapRoot\C#\BT\CatDictionary\obj\Debug\Dictionary.csproj.GenerateResource.cache
