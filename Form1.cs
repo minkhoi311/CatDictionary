@@ -81,7 +81,7 @@ namespace Dictionary
         //nút để xóa
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            RemoveForm removeForm = new RemoveForm();
+            RemoveForm removeForm = new RemoveForm(excelData, filePath);
             removeForm.ShowDialog();
         }
         //nút copy từ hiện tại
