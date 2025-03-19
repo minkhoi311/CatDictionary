@@ -1,6 +1,8 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -20,56 +22,82 @@ namespace Dictionary
         //btn Thêm
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            //if (string.IsNullOrEmpty(filePath))
-            //{
-            //    MessageBox.Show("Vui lòng chọn file trước khi thêm từ vựng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(filePath))
+            {
+                MessageBox.Show("Vui lòng chọn file trước khi thêm từ vựng", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-            //// Kiểm tra xem file có tồn tại không
-            //if (!File.Exists(filePath))
-            //{
-            //    MessageBox.Show("File Excel không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    return;
-            //}
-            //AddForm dgl2 = new AddForm();
-            //DialogResult result = dgl2.ShowDialog();
-
-
-
-            //if (result == DialogResult.OK)
-            //{
-
-            //    string word = dgl2.WordValue;
-            //    string ipa = dgl2.IpaValue;
-            //    string mean = dgl2.MeanValue;
-            //    string ex1 = dgl2.Ex1Value;
-            //    string ex2 = dgl2.Ex2Value;
-            //    string ex3 = dgl2.Ex3Value;
-
-            //    if (excelData != null)
-            //    {
-            //        DataRow newRow = excelData.NewRow();
-
-            //        newRow[0] = word;
-            //        newRow[1] = ipa;
-            //        newRow[2] = mean;
-            //        newRow[3] = ex1;
-            //        newRow[4] = ex2;
-            //        newRow[5] = ex3;
-
-            //        excelData.Rows.Add(newRow);
-            //        SaveDataToExcel(filePath);
-
-            //    }
-            //    dgl2.Close();
-            //}
+            if (!File.Exists(filePath))
+            {
+                MessageBox.Show("File Excel không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             AddForm dgl2 = new AddForm();
-            dgl2.ShowDialog();
-        }
+            DialogResult result = dgl2.ShowDialog();
 
-        // thêm từ
-        private void btnImport_Click(object sender, EventArgs e)
+
+
+            if (result == DialogResult.OK)
+            {
+
+                string word = dgl2.WordValue;
+                string ipa = dgl2.IpaValue;
+                string mean = dgl2.MeanValue;
+                string ex1 = dgl2.Ex1Value;
+                string ex2 = dgl2.Ex2Value;
+                string ex3 = dgl2.Ex3Value;
+
+                if (excelData != null)
+                {
+                    DataRow newRow = excelData.NewRow();
+
+                    newRow[0] = word;
+                    newRow[1] = ipa;
+                    newRow[2] = mean;
+                    newRow[3] = ex1;
+                    newRow[4] = ex2;
+                    newRow[5] = ex3;
+
+                    excelData.Rows.Add(newRow);
+                    SaveDataToExcel(filePath);
+
+                }
+                dgl2.Close();
+            }
+
+        }
+        private void SaveDataToExcel(string filePath)
+        {
+            try
+            {
+                using (var workbook = new XLWorkbook())
+                {
+                    var worksheet = workbook.Worksheets.Add("Sheet1");
+
+                    for (int i = 0; i < excelData.Rows.Count; i++)
+                    {
+                        for (int j = 0; j < excelData.Columns.Count; j++)
+                        {
+                            var cellValue = excelData.Rows[i][j].ToString();
+                            worksheet.Cell(i + 1, j + 1).SetValue(cellValue);
+                        }
+                    }
+
+                    workbook.SaveAs(filePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi lưu dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+    
+
+
+
+// thêm từ
+private void btnImport_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
@@ -190,7 +218,7 @@ namespace Dictionary
             }
             catch (Exception ex)
             {
-                //bắt lỗi
+                MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
