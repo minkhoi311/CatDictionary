@@ -2,16 +2,19 @@
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Dictionary
 {
     public partial class FixWordForm : BaseForm
     {
+        private ListViewManager listViewManager;
         public FixWordForm(DataTable data, string importedFilePath)
         {
             InitializeComponent();
             excelData = data;
             filePath = importedFilePath;
+            listViewManager = new ListViewManager(listView1); // Quản lý ListView
         }
 
         private void btnDone_Click(object sender, EventArgs e)
@@ -44,6 +47,21 @@ namespace Dictionary
             {
                 MessageBox.Show("Lỗi khi sửa từ: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnDS_Click(object sender, EventArgs e)
+        {
+            listView1.Visible = true;
+            btnDS.Visible = false;
+            btnAn.Visible = true;
+            listViewManager.LoadData(excelData);
+        }
+
+        private void btnAn_Click(object sender, EventArgs e)
+        {
+            listView1.Visible = false;
+            btnDS.Visible = true;
+            btnAn.Visible = false;
         }
     }
 }

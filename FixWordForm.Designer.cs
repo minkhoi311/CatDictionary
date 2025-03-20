@@ -46,6 +46,9 @@
             this.btnDone = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.txtNewWord = new System.Windows.Forms.TextBox();
+            this.btnDS = new System.Windows.Forms.Button();
+            this.listView1 = new System.Windows.Forms.ListView();
+            this.btnAn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -202,7 +205,7 @@
             this.btnDone.BackColor = System.Drawing.Color.DarkGray;
             this.btnDone.FlatAppearance.BorderSize = 0;
             this.btnDone.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDone.Location = new System.Drawing.Point(318, 329);
+            this.btnDone.Location = new System.Drawing.Point(323, 329);
             this.btnDone.Name = "btnDone";
             this.btnDone.Size = new System.Drawing.Size(164, 39);
             this.btnDone.TabIndex = 8;
@@ -228,12 +231,52 @@
             this.txtNewWord.Size = new System.Drawing.Size(318, 32);
             this.txtNewWord.TabIndex = 3;
             // 
+            // btnDS
+            // 
+            this.btnDS.BackColor = System.Drawing.Color.DarkGray;
+            this.btnDS.FlatAppearance.BorderSize = 0;
+            this.btnDS.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDS.Location = new System.Drawing.Point(283, 400);
+            this.btnDS.Name = "btnDS";
+            this.btnDS.Size = new System.Drawing.Size(229, 39);
+            this.btnDS.TabIndex = 8;
+            this.btnDS.Text = "Hiện danh sách";
+            this.btnDS.UseVisualStyleBackColor = false;
+            this.btnDS.Click += new System.EventHandler(this.btnDS_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.HideSelection = false;
+            this.listView1.Location = new System.Drawing.Point(101, 115);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(584, 271);
+            this.listView1.TabIndex = 9;
+            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.listView1.Visible = false;
+            // 
+            // btnAn
+            // 
+            this.btnAn.BackColor = System.Drawing.Color.DarkGray;
+            this.btnAn.FlatAppearance.BorderSize = 0;
+            this.btnAn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAn.Location = new System.Drawing.Point(283, 400);
+            this.btnAn.Name = "btnAn";
+            this.btnAn.Size = new System.Drawing.Size(229, 39);
+            this.btnAn.TabIndex = 8;
+            this.btnAn.Text = "Ẩn danh sách";
+            this.btnAn.UseVisualStyleBackColor = false;
+            this.btnAn.Visible = false;
+            this.btnAn.Click += new System.EventHandler(this.btnAn_Click);
+            // 
             // FixWordForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(794, 451);
+            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.btnAn);
+            this.Controls.Add(this.btnDS);
             this.Controls.Add(this.btnDone);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox7);
@@ -289,5 +332,8 @@
         private System.Windows.Forms.Button btnDone;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtNewWord;
+        private System.Windows.Forms.Button btnDS;
+        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.Button btnAn;
     }
 }

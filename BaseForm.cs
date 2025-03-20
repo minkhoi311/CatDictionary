@@ -24,6 +24,7 @@ namespace Dictionary
             }
             return resized;
         }
+
         // Lưu trữ dữ liệu từ file Excel
         protected DataTable excelData;
         protected string filePath;
