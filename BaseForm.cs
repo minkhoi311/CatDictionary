@@ -28,62 +28,72 @@ namespace Dictionary
         // Lưu trữ dữ liệu từ file Excel
         protected DataTable excelData;
         protected string filePath;
-        public void LoadExcelData(string filePath)
+        public bool LoadExcelData(string filePath) // import data
         {
-            try
+            if (!File.Exists(filePath))
             {
-                if (!File.Exists(filePath))
-                {
-                    MessageBox.Show("File Excel không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
-                }
+                return false;
+            }
 
-                using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
+            using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
+            {
+                using (var reader = ExcelReaderFactory.CreateReader(stream))
                 {
-                    using (var reader = ExcelReaderFactory.CreateReader(stream))
+                    var result = reader.AsDataSet(new ExcelDataSetConfiguration()
                     {
-                        var result = reader.AsDataSet(new ExcelDataSetConfiguration()
-                        {
-                            ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = false }
-                        });
+                        ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = false }
+                    });
 
-                        excelData = result.Tables[0]; // Lưu dữ liệu vào biến
-                        this.filePath = filePath; // Lưu đường dẫn file
-                        MessageBox.Show("Dữ liệu đã được nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
+                    excelData = result.Tables[0]; // Lưu dữ liệu vào biến
+                    this.filePath = filePath; // Lưu đường dẫn file
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi đọc file Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            return true;
         }
+
+
         // Lưu dữ liệu trở lại file Excel
-        public void SaveToExcel()
+        public bool SaveToExcel()
         {
-            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+            if (!File.Exists(filePath)) // 
+            {
+                MessageBox.Show("File Excel không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            // bat loi kh mo dc file 
             try
             {
-                using (var package = new ExcelPackage(new FileInfo(filePath)))
+                // Kiểm tra xem file có đang bị khóa không
+                using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.ReadWrite, FileShare.None))
                 {
-                    var worksheet = package.Workbook.Worksheets.FirstOrDefault() ?? package.Workbook.Worksheets.Add("Sheet1");
-
-                    for (int i = 0; i < excelData.Rows.Count; i++)
-                    {
-                        for (int j = 0; j < excelData.Columns.Count; j++)
-                        {
-                            worksheet.Cells[i + 1, j + 1].Value = excelData.Rows[i][j].ToString();
-                        }
-                    }
-
-                    package.Save();
-                    MessageBox.Show("Đã lưu dữ liệu vào file: " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    fs.Close(); // Đóng file sau khi kiểm tra
                 }
             }
-            catch (Exception ex)
+            catch (IOException) // Nếu bắt lỗi này, nghĩa là file đang mở
             {
-                MessageBox.Show("Lỗi khi lưu file Excel: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("File Excel đang mở! Vui lòng đóng file trước khi lưu.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return false;
             }
+            // luu thanh cong 
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+            using (var package = new ExcelPackage(new FileInfo(filePath)))
+            {
+                var worksheet = package.Workbook.Worksheets.FirstOrDefault() ?? package.Workbook.Worksheets.Add("Sheet1");
+
+                for (int i = 0; i < excelData.Rows.Count; i++)
+                {
+                    for (int j = 0; j < excelData.Columns.Count; j++)
+                    {
+                        worksheet.Cells[i + 1, j + 1].Value = excelData.Rows[i][j].ToString();
+                    }
+                }
+
+                package.Save();
+                MessageBox.Show("Đã lưu dữ liệu vào file: " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            return true;
+
         }
     }
 }

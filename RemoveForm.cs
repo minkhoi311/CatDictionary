@@ -7,13 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DocumentFormat.OpenXml.Spreadsheet;
 
 namespace Dictionary
 {
     public partial class RemoveForm : BaseForm
     {
         private ListViewManager listViewManager;
-        public RemoveForm(DataTable data, string path)
+        public RemoveForm(ref DataTable data, string path)
         {
             InitializeComponent();
             this.excelData = data;
@@ -29,10 +30,26 @@ namespace Dictionary
                 if (MessageBox.Show("Bạn có chắc muốn xóa từ vựng này khỏi danh sách?", "Xác nhận",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                 {
-                    listViewManager.RemoveSelectedItems();
-                    MessageBox.Show("Xóa từ vựng thành công!", "Thông báo!",
-                        MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    lbTuXoa.Text = "";
+                    DataRow row = null;
+                    foreach (ListViewItem item in listView1.SelectedItems)
+                    {
+                        row = excelData.AsEnumerable().FirstOrDefault(r => r[0].ToString().Trim().ToLower() == item.Text);
+                        excelData.Rows.Remove(row); // xoa dc o file
+                        //excelData.Rows.RemoveAt(item.Index + 1);
+                    }
+                    bool result = SaveToExcel();
+                    if (result)
+                    {
+                        MessageBox.Show("Lưu thành công vào file Excel", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        listViewManager.RemoveSelectedItems(); // xóa trong list
+                        lbTuXoa.Text = "";
+                    }
+                    else
+                    {
+                        MessageBox.Show("Lưu không thành công vào file Excel", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
                 }
             }
             else
