@@ -60,38 +60,14 @@ namespace Dictionary
                     newRow[5] = ex3;
 
                     excelData.Rows.Add(newRow);
-                    SaveDataToExcel(filePath);
+                    SaveToExcel();
 
                 }
                 dgl2.Close();
             }
 
         }
-        private void SaveDataToExcel(string filePath)
-        {
-            try
-            {
-                using (var workbook = new XLWorkbook())
-                {
-                    var worksheet = workbook.Worksheets.Add("Sheet1");
-
-                    for (int i = 0; i < excelData.Rows.Count; i++)
-                    {
-                        for (int j = 0; j < excelData.Columns.Count; j++)
-                        {
-                            var cellValue = excelData.Rows[i][j].ToString();
-                            worksheet.Cell(i + 1, j + 1).SetValue(cellValue);
-                        }
-                    }
-
-                    workbook.SaveAs(filePath);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Lỗi khi lưu dữ liệu: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
+        
     
 
 
@@ -107,7 +83,14 @@ private void btnImport_Click(object sender, EventArgs e)
 
             if (openFileDialog.ShowDialog() == DialogResult.OK)
             {
-                LoadExcelData(openFileDialog.FileName);
+                if (LoadExcelData(openFileDialog.FileName))
+                {
+                    MessageBox.Show("Dữ liệu đã được nhập thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                }
+                else
+                    MessageBox.Show("File Excel không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
         // logo tìm kiếm
@@ -153,9 +136,11 @@ private void btnImport_Click(object sender, EventArgs e)
         //nút để xóa
         private void btnRemove_Click(object sender, EventArgs e)
         {
-            RemoveForm removeForm = new RemoveForm(excelData, filePath);
+            RemoveForm removeForm = new RemoveForm(ref excelData, filePath);
             removeForm.ShowDialog();
         }
+
+
         //nút copy từ hiện tại
         [STAThread] // Cần thiết cho Clipboard hoạt động đúng
         private void btnCopy_Click(object sender, EventArgs e)
