@@ -79,6 +79,12 @@ namespace Dictionary
             ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
             using (var package = new ExcelPackage(new FileInfo(filePath)))
             {
+
+                while (package.Workbook.Worksheets.Count > 0)
+                {
+                    package.Workbook.Worksheets.Delete(0); // Xóa từng sheet từ index 0
+                }
+
                 var worksheet = package.Workbook.Worksheets.FirstOrDefault() ?? package.Workbook.Worksheets.Add("Sheet1");
 
                 for (int i = 0; i < excelData.Rows.Count; i++)

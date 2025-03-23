@@ -33,44 +33,9 @@ namespace Dictionary
                 MessageBox.Show("File Excel không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            AddForm dgl2 = new AddForm();
+            AddForm dgl2 = new AddForm(ref excelData, filePath);
             DialogResult result = dgl2.ShowDialog();
-
-
-
-            if (result == DialogResult.OK)
-            {
-
-                string word = dgl2.WordValue;
-                string ipa = dgl2.IpaValue;
-                string mean = dgl2.MeanValue;
-                string ex1 = dgl2.Ex1Value;
-                string ex2 = dgl2.Ex2Value;
-                string ex3 = dgl2.Ex3Value;
-
-                if (excelData != null)
-                {
-                    DataRow newRow = excelData.NewRow();
-
-                    newRow[0] = word;
-                    newRow[1] = ipa;
-                    newRow[2] = mean;
-                    newRow[3] = ex1;
-                    newRow[4] = ex2;
-                    newRow[5] = ex3;
-
-                    excelData.Rows.Add(newRow);
-                    SaveToExcel();
-
-                }
-                dgl2.Close();
-            }
-
         }
-        
-    
-
-
 
 // thêm từ
 private void btnImport_Click(object sender, EventArgs e)
