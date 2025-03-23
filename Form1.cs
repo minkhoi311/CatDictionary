@@ -10,9 +10,11 @@ namespace Dictionary
 {
     public partial class Form1 : BaseForm
     {
+        bool isClosing;
         public Form1()
         {
             InitializeComponent();
+            this.Opacity = 1;
         }
 
         private void Form1_Load_1(object sender, EventArgs e)
@@ -82,6 +84,12 @@ private void btnImport_Click(object sender, EventArgs e)
             else
             {
                 MessageBox.Show("Không tìm thấy từ!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                lbWord.Text = "";
+                lbIPA.Text = "";
+                lbMeaning.Text = "";
+                lbEX1.Text = "";
+                lbEX2.Text = "";
+                lbEX3.Text = "";
             }
         }
 
@@ -101,6 +109,11 @@ private void btnImport_Click(object sender, EventArgs e)
         //nút để xóa
         private void btnRemove_Click(object sender, EventArgs e)
         {
+            if (excelData == null)
+            {
+                MessageBox.Show("Bạn chưa nhập dữ liệu Excel!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             RemoveForm removeForm = new RemoveForm(ref excelData, filePath);
             removeForm.ShowDialog();
         }
@@ -169,6 +182,42 @@ private void btnImport_Click(object sender, EventArgs e)
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!isClosing)
+            {
+                if (MessageBox.Show("Bạn có chắc chắn muốn thoát chương trình?",
+                    "Xác nhận", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+                    == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    e.Cancel = true;
+                    timer1.Start();
+                }
+            }
+            else
+            {
+                Application.Exit();
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (this.Opacity != 0)
+            {
+                this.Opacity -= 0.1;
+            }
+            else
+            {
+                timer1.Stop();
+                isClosing = true;
+                this.Close();
             }
         }
     }
