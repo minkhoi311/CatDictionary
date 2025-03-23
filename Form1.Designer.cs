@@ -30,6 +30,7 @@ namespace Dictionary
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -52,6 +53,7 @@ namespace Dictionary
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -154,7 +156,7 @@ namespace Dictionary
             this.txtSearch.Location = new System.Drawing.Point(162, 25);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(10, 3, 10, 3);
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(497, 44);
+            this.txtSearch.Size = new System.Drawing.Size(497, 37);
             this.txtSearch.TabIndex = 0;
             // 
             // btnCopy
@@ -206,7 +208,7 @@ namespace Dictionary
             this.lbIPA.Font = new System.Drawing.Font("MS Reference Sans Serif", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbIPA.Location = new System.Drawing.Point(185, 234);
             this.lbIPA.Name = "lbIPA";
-            this.lbIPA.Size = new System.Drawing.Size(89, 26);
+            this.lbIPA.Size = new System.Drawing.Size(72, 20);
             this.lbIPA.TabIndex = 4;
             this.lbIPA.Text = "/heˈləʊ/";
             // 
@@ -301,9 +303,14 @@ namespace Dictionary
             this.pictureBox6.TabIndex = 13;
             this.pictureBox6.TabStop = false;
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 50;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(868, 518);
@@ -335,6 +342,7 @@ namespace Dictionary
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CatDictionary";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -369,6 +377,7 @@ namespace Dictionary
         private PictureBox pictureBox3;
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
+        private Timer timer1;
     }
 }
 

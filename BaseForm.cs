@@ -96,7 +96,6 @@ namespace Dictionary
                 }
 
                 package.Save();
-                MessageBox.Show("Đã lưu dữ liệu vào file: " + filePath, "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             return true;
 
