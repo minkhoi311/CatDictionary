@@ -15,6 +15,7 @@ namespace Dictionary
             excelData = data;
             filePath = importedFilePath;
             listViewManager = new ListViewManager(listView1); // Quản lý ListView
+            label2.Text = "     Chỉnh Sửa Từ Điển    ";
         }
 
         private void btnDone_Click(object sender, EventArgs e)
@@ -62,6 +63,11 @@ namespace Dictionary
             listView1.Visible = false;
             btnDS.Visible = true;
             btnAn.Visible = false;
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label2.Text = label2.Text.Substring(1) + label2.Text[0];
         }
     }
 }

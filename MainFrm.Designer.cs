@@ -2,7 +2,7 @@
 
 namespace Dictionary
 {
-    partial class Form1
+    partial class MainFrm
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace Dictionary
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainFrm));
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnRemove = new System.Windows.Forms.Button();

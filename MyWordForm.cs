@@ -12,12 +12,13 @@ namespace Dictionary
 {
     public partial class MyWordForm : BaseForm
     {
-        private Form1 mainForm;
-        public MyWordForm(Form1 form1)
+        private MainFrm mainForm;
+        public MyWordForm(MainFrm form1)
         {
             InitializeComponent();
             mainForm = form1;
             LoadSavedWords();
+            lbWord.Text = "     Từ Điển Của Riêng Bạn    ";
         }
         private void LoadSavedWords()
         {
@@ -29,5 +30,9 @@ namespace Dictionary
             }
         }
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbWord.Text = lbWord.Text.Substring(1) + lbWord.Text[0];
+        }
     }
 }

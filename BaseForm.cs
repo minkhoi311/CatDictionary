@@ -13,21 +13,23 @@ namespace Dictionary
 {
     public class BaseForm : Form
     {
+        protected DataTable excelData;
+        protected string filePath;
+
+
         // Chỉnh kích thước ảnh
         protected Image ResizeImage(Image img, int width, int height)
         {
             Bitmap resized = new Bitmap(width, height);
-            using (Graphics g = Graphics.FromImage(resized))
+            using (Graphics g = Graphics.FromImage(resized))  // sau khi ra khỏi using đối tượng g được hủy tự động 
             {
-                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic; // tính toán lại màu sắc của từng điểm ảnh(nội suy), kh bể hình 
                 g.DrawImage(img, 0, 0, width, height);
             }
             return resized;
         }
 
-        // Lưu trữ dữ liệu từ file Excel
-        protected DataTable excelData;
-        protected string filePath;
+        // Import data từ file Excel vào dataTable 
         public bool LoadExcelData(string filePath) // import data
         {
             if (!File.Exists(filePath))
@@ -35,13 +37,13 @@ namespace Dictionary
                 return false;
             }
 
-            using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read))
+            using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))  // using tự động đóng file sau khi làm việc 
             {
-                using (var reader = ExcelReaderFactory.CreateReader(stream))
+                using (var reader = ExcelReaderFactory.CreateReader(stream))  // tạo một trình đọc file Excel 
                 {
                     var result = reader.AsDataSet(new ExcelDataSetConfiguration()
                     {
-                        ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = false }
+                        ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = false }  // bỏ dùng dòng đầu tiên 
                     });
 
                     excelData = result.Tables[0]; // Lưu dữ liệu vào biến
@@ -52,40 +54,41 @@ namespace Dictionary
         }
 
 
-        // Lưu dữ liệu trở lại file Excel
+        // Lưu trữ dữ liệu xuống file Excel từ dataTable 
         public bool SaveToExcel()
         {
-            if (!File.Exists(filePath)) // 
+            if (!File.Exists(filePath)) // lỗi file kh tồn tại 
             {
                 MessageBox.Show("File Excel không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
 
-            // bat loi kh mo dc file 
+            // Bắt lỗi không mở được file 
             try
             {
-                // Kiểm tra xem file có đang bị khóa không
+                // Kiểm tra xem file có đang được mở không
                 using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.ReadWrite, FileShare.None))
                 {
-                    fs.Close(); // Đóng file sau khi kiểm tra
                 }
             }
-            catch (IOException) // Nếu bắt lỗi này, nghĩa là file đang mở
+            catch (IOException) // Nếu bắt lỗi là file đang mở
             {
                 MessageBox.Show("File Excel đang mở! Vui lòng đóng file trước khi lưu.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return false;
             }
-            // luu thanh cong 
-            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;
+            
+            // lưu file thành công 
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;  // sử dụng EPPlus ghi dữ liệu vào Excel 
             using (var package = new ExcelPackage(new FileInfo(filePath)))
             {
 
-                while (package.Workbook.Worksheets.Count > 0)
-                {
-                    package.Workbook.Worksheets.Delete(0); // Xóa từng sheet từ index 0
-                }
+                //while (package.Workbook.Worksheets.Count > 0)
+                //{
+                //    package.Workbook.Worksheets.Delete(0); // Xóa từng sheet từ index 0
+                //}
 
-                var worksheet = package.Workbook.Worksheets.FirstOrDefault() ?? package.Workbook.Worksheets.Add("Sheet1");
+                var worksheet = package.Workbook.Worksheets.FirstOrDefault() ?? package.Workbook.Worksheets.Add("Sheet lưu data từ excelData");
+                worksheet.Cells.Clear(); // Thay vì xóa sheet, chỉ xóa dữ liệu
 
                 for (int i = 0; i < excelData.Rows.Count; i++)
                 {

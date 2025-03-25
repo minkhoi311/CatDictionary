@@ -68,7 +68,6 @@
             // 
             this.timer2.Enabled = true;
             this.timer2.Interval = 4000;
-            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // pictureBox5
             // 
@@ -158,9 +157,11 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Loading";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Loading";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Loading_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

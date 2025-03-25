@@ -13,19 +13,20 @@ namespace Dictionary
 {
     public partial class RemoveForm : BaseForm
     {
-        private ListViewManager listViewManager;
-        public RemoveForm(ref DataTable data, string path)
+        private ListViewManager listViewManager;  
+        public RemoveForm(DataTable data, string path)
         {
             InitializeComponent();
             this.excelData = data;
             this.filePath = path;
+            label1.Text = "     Xóa Từ Vựng     ";
 
             listViewManager = new ListViewManager(listView1);
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (listView1.SelectedItems.Count > 0)
+            if (listView1.SelectedItems.Count > 0)   // kiểm tra có số lượng từ muốn xóa 
             {
                 if (MessageBox.Show("Bạn có chắc muốn xóa từ vựng này khỏi danh sách?", "Xác nhận",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
@@ -33,12 +34,11 @@ namespace Dictionary
                     DataRow row = null;
                     foreach (ListViewItem item in listView1.SelectedItems)
                     {
-                        row = excelData.AsEnumerable().FirstOrDefault(r => r[0].ToString().Trim().ToLower() == item.Text);
-                        excelData.Rows.Remove(row); // xoa dc o file
-                        //excelData.Rows.RemoveAt(item.Index + 1);
+                        row = excelData.AsEnumerable().FirstOrDefault(r => r[0].ToString().Trim().ToLower() == item.Text);  // tìm dòng muốn xóa trong data 
+                        excelData.Rows.Remove(row); // xóa được ở file Excel 
                     }
                     bool result = SaveToExcel();
-                    if (result)
+                    if (result)  // kiểm tra việc lưu file kh gặp trục trặc 
                     {
                         MessageBox.Show("Lưu thành công vào file Excel", "Thông báo",
                             MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -61,8 +61,10 @@ namespace Dictionary
 
         private void listView1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            lbTuXoa.Text = listViewManager.GetSelectedItemsText();
+            lbTuXoa.Text = listViewManager.GetSelectedItemsText();  
         }
+
+        // xử lý sự kiện load form 
         private void RemoveForm_Load(object sender, EventArgs e)
         {
             if (excelData == null || excelData.Rows.Count == 0)
@@ -73,6 +75,11 @@ namespace Dictionary
                 return;
             }
             listViewManager.LoadData(excelData);
+        }
+
+        private void tChaychu_Tick(object sender, EventArgs e)
+        {
+            label1.Text = label1.Text.Substring(1) + label1.Text[0];
         }
     }
 }

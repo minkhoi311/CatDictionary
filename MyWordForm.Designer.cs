@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.listView1 = new System.Windows.Forms.ListView();
             this.colWord = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colIPA = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.colMeaning = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.lbWord = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // listView1
@@ -76,12 +78,17 @@
             this.lbWord.Name = "lbWord";
             this.lbWord.Size = new System.Drawing.Size(651, 69);
             this.lbWord.TabIndex = 5;
-            this.lbWord.Text = "Từ Điển Của Riêng Bạn";
+            this.lbWord.Text = "label";
             this.lbWord.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MyWordForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(716, 443);
@@ -104,5 +111,6 @@
         private System.Windows.Forms.ColumnHeader colIPA;
         private System.Windows.Forms.ColumnHeader colMeaning;
         private System.Windows.Forms.Label lbWord;
+        private System.Windows.Forms.Timer timer1;
     }
 }

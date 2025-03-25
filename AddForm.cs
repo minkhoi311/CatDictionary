@@ -8,16 +8,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DocumentFormat.OpenXml.ExtendedProperties;
 
 namespace Dictionary
 {
     public partial class AddForm : BaseForm
     {
-        public AddForm(ref DataTable data, string path)
+        public AddForm(DataTable data, string path)
         {
             InitializeComponent();
             this.excelData = data;
             this.filePath = path;
+            label1.Text = "     Thêm Từ Mới  ";
         }
 
         private void AddForm_Load(object sender, EventArgs e)
@@ -31,6 +33,12 @@ namespace Dictionary
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin từ vựng và nghĩa!", "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            bool wordExists = excelData.AsEnumerable().Any(row => row[0].ToString() == txtWord.Text);  // kiểm tra từ đã tồn tại 
+            if (wordExists)
+            {
+                MessageBox.Show("Từ này đã tồn tại trong danh sách!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
             DialogResult confirmResult = MessageBox.Show("Bạn có chắc muốn thêm từ vựng này vào danh sách?",
@@ -74,6 +82,11 @@ namespace Dictionary
                 }
             }
                 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label1.Text = label1.Text.Substring(1) + label1.Text[0];
         }
     }
 }
