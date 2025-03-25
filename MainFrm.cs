@@ -8,20 +8,29 @@ using System.Windows.Forms;
 
 namespace Dictionary
 {
-    public partial class Form1 : BaseForm
+    public partial class MainFrm : BaseForm
     {
-        bool isClosing;
-        public Form1()
+        bool isClosing = false;
+        public MainFrm()
         {
+            Loading f = new Loading();
+            f.ShowDialog();
             InitializeComponent();
-            this.Opacity = 1;
         }
 
+        private void Init()
+        {
+            lbEX1.Text = lbEX2.Text = lbEX3.Text = lbIPA.Text = lbMeaning.Text = lbWord.Text = "";
+        }
+
+        // xử lý form load 
         private void Form1_Load_1(object sender, EventArgs e)
         {
             btnCopy.Image = ResizeImage(Properties.Resources.copy, btnCopy.Width - 15, btnCopy.Height - 15);
+            Init();
         }
-        //btn Thêm
+
+        //Chức năng Thêm từ 
         private void btnAdd_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(filePath))
@@ -35,12 +44,12 @@ namespace Dictionary
                 MessageBox.Show("File Excel không tồn tại!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            AddForm dgl2 = new AddForm(ref excelData, filePath);
+            AddForm dgl2 = new AddForm(excelData, filePath);
             DialogResult result = dgl2.ShowDialog();
         }
 
-// thêm từ
-private void btnImport_Click(object sender, EventArgs e)
+        // import file
+        private void btnImport_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFileDialog = new OpenFileDialog
             {
@@ -60,12 +69,15 @@ private void btnImport_Click(object sender, EventArgs e)
 
             }
         }
-        // logo tìm kiếm
+
+        // Chức năng tìm kiếm
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             if (excelData == null || excelData.Rows.Count == 0)
             {
-                MessageBox.Show("Bạn chưa nhập dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa nhập dữ liệu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //lbWord.Text = "";
+                //lbWord.Focus();
                 return;
             }
 
@@ -93,12 +105,12 @@ private void btnImport_Click(object sender, EventArgs e)
             }
         }
 
-        // sửa từ lại
+        // Chức năng sửa từ 
         private void btnFix_Click(object sender, EventArgs e)
         {
             if (excelData == null)
             {
-                MessageBox.Show("Bạn chưa nhập dữ liệu Excel!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa nhập dữ liệu Excel!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -106,20 +118,20 @@ private void btnImport_Click(object sender, EventArgs e)
             fixWordForm.ShowDialog();
         }
 
-        //nút để xóa
+        // Chức năng xóa từ 
         private void btnRemove_Click(object sender, EventArgs e)
         {
             if (excelData == null)
             {
-                MessageBox.Show("Bạn chưa nhập dữ liệu Excel!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Vui lòng nhập dữ liệu từ file Excel!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            RemoveForm removeForm = new RemoveForm(ref excelData, filePath);
+            RemoveForm removeForm = new RemoveForm(excelData, filePath);
             removeForm.ShowDialog();
         }
 
 
-        //nút copy từ hiện tại
+        // Chức năng copy từ 
         [STAThread] // Cần thiết cho Clipboard hoạt động đúng
         private void btnCopy_Click(object sender, EventArgs e)
         {
@@ -132,9 +144,11 @@ private void btnImport_Click(object sender, EventArgs e)
             }
             else
             {
-                MessageBox.Show("Không có nội dung để sao chép!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Không có nội dung để sao chép!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        // Chức năng thêm từ vào list myWords
         private Dictionary<string, (string ipa, string meaning)> savedWord = new Dictionary<string, (string, string)>();
         public Dictionary<string, (string ipa, string meaning)> SavedWord
         {
@@ -146,9 +160,9 @@ private void btnImport_Click(object sender, EventArgs e)
             string word = lbWord.Text.Trim().ToLower();
             string ipa = lbIPA.Text.Trim();
             string mean = lbMeaning.Text;
-            if(!string.IsNullOrEmpty(word) && !savedWord.ContainsKey(word))
+            if (!string.IsNullOrEmpty(word) && !savedWord.ContainsKey(word))
             {
-                savedWord[word] = (ipa, mean); 
+                savedWord[word] = (ipa, mean);
                 MessageBox.Show($"Đã lưu từ: {word}", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else if (savedWord.ContainsKey(word))
@@ -157,7 +171,7 @@ private void btnImport_Click(object sender, EventArgs e)
             }
             else
             {
-                MessageBox.Show("Không có từ để lưu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Không có từ để lưu!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -167,11 +181,13 @@ private void btnImport_Click(object sender, EventArgs e)
             myWordForm.ShowDialog();
         }
 
+
+        // Chức năng chơi game ôn bài 
         private void btnGame_Click(object sender, EventArgs e)
         {
             if (savedWord.Count == 0)
             {
-                MessageBox.Show("Bạn chưa lưu từ nào để chơi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Bạn chưa lưu từ nào để chơi!", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             try
@@ -185,6 +201,8 @@ private void btnImport_Click(object sender, EventArgs e)
             }
         }
 
+
+        // Xử lý đóng form mờ dần 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (!isClosing)

@@ -21,22 +21,31 @@ namespace Dictionary
         int count = 0;// đếm số lần tick
         private void timer1_Tick(object sender, EventArgs e)
         {
-            pictureBox1.Left += 100;
-            pictureBox2.Left -= 100;
+            pictureBox1.Left += 80;
+            pictureBox2.Left -= 80;
             count++;
             if (count >= 5) 
             {
                 timer1.Stop();
+                this.Close();
             }
         }
 
-        private void timer2_Tick(object sender, EventArgs e)
+        private void Loading_FormClosing(object sender, FormClosingEventArgs e)
         {
-            timer2.Stop();
-            Form1 form1 = new Form1();
-            form1.FormClosed += (s, args) => this.Close(); // Khi đóng Form1, đóng luôn Loading
-            form1.Show();
-            this.Hide();
+            if (count < 5)
+            {
+                Application.Exit();
+            }
         }
+
+        //private void timer2_Tick(object sender, EventArgs e)
+        //{
+        //    timer2.Stop();
+        //    MainFrm form1 = new MainFrm();
+        //    form1.FormClosed += (s, args) => this.Close(); // Khi đóng Form1, đóng luôn Loading
+        //    form1.Show();
+        //    this.Hide();
+        //}
     }
 }

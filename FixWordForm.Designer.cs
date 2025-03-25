@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -49,6 +50,7 @@
             this.btnDS = new System.Windows.Forms.Button();
             this.listView1 = new System.Windows.Forms.ListView();
             this.btnAn = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -73,7 +75,7 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(683, 105);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Chỉnh Sửa Từ Điển";
+            this.label2.Text = "label";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label3
@@ -113,21 +115,21 @@
             // 
             this.txtOldWord.Location = new System.Drawing.Point(341, 152);
             this.txtOldWord.Name = "txtOldWord";
-            this.txtOldWord.Size = new System.Drawing.Size(318, 32);
+            this.txtOldWord.Size = new System.Drawing.Size(318, 27);
             this.txtOldWord.TabIndex = 3;
             // 
             // txtIPAFix
             // 
             this.txtIPAFix.Location = new System.Drawing.Point(341, 246);
             this.txtIPAFix.Name = "txtIPAFix";
-            this.txtIPAFix.Size = new System.Drawing.Size(318, 32);
+            this.txtIPAFix.Size = new System.Drawing.Size(318, 27);
             this.txtIPAFix.TabIndex = 3;
             // 
             // txtMeanFix
             // 
             this.txtMeanFix.Location = new System.Drawing.Point(341, 291);
             this.txtMeanFix.Name = "txtMeanFix";
-            this.txtMeanFix.Size = new System.Drawing.Size(318, 32);
+            this.txtMeanFix.Size = new System.Drawing.Size(318, 27);
             this.txtMeanFix.TabIndex = 3;
             // 
             // pictureBox4
@@ -228,7 +230,7 @@
             // 
             this.txtNewWord.Location = new System.Drawing.Point(341, 197);
             this.txtNewWord.Name = "txtNewWord";
-            this.txtNewWord.Size = new System.Drawing.Size(318, 32);
+            this.txtNewWord.Size = new System.Drawing.Size(318, 27);
             this.txtNewWord.TabIndex = 3;
             // 
             // btnDS
@@ -268,9 +270,13 @@
             this.btnAn.Visible = false;
             this.btnAn.Click += new System.EventHandler(this.btnAn_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // FixWordForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 26F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(794, 451);
@@ -335,5 +341,6 @@
         private System.Windows.Forms.Button btnDS;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Button btnAn;
+        private System.Windows.Forms.Timer timer1;
     }
 }

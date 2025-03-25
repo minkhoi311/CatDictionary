@@ -12,10 +12,10 @@ namespace Dictionary
 {
     public partial class GameForm : BaseForm
     {
-        private Form1 mainForm;
+        private MainFrm mainForm;
         private string currentWord;
         private Random random = new Random();
-        public GameForm(Form1 form1)
+        public GameForm(MainFrm form1)
         {
             InitializeComponent();
             this.mainForm = form1;
