@@ -131,11 +131,11 @@
     <Compile Include="FixWordForm.Designer.cs">
       <DependentUpon>FixWordForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="MainFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="MainFrm.Designer.cs">
+      <DependentUpon>MainFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="GameForm.cs">
       <SubType>Form</SubType>
@@ -175,8 +175,8 @@
     <EmbeddedResource Include="FixWordForm.resx">
       <DependentUpon>FixWordForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="MainFrm.resx">
+      <DependentUpon>MainFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GameForm.resx">
       <DependentUpon>GameForm.cs</DependentUpon>
@@ -210,8 +210,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\meo21.png" />
-    <Content Include="Resources\meow11.png" />
     <None Include="Resources\picture\logo.png" />
     <None Include="Resources\picture\search.png" />
     <None Include="Resources\picture\copy.png" />
@@ -220,12 +218,6 @@
     <None Include="Resources\picture\bigFoot.png" />
     <None Include="Resources\picture\catRight.png" />
     <None Include="Resources\picture\catLeft.png" />
-    <None Include="Resources\share.png" />
-    <None Include="Resources\search.png" />
-    <None Include="Resources\logo.png" />
-    <None Include="Resources\foot.png" />
-    <None Include="Resources\facebook.png" />
-    <None Include="Resources\copy.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\excel\" />

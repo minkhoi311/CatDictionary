@@ -71,7 +71,7 @@ namespace Dictionary
         }
 
         // Chức năng tìm kiếm
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void TimKiem()
         {
             if (excelData == null || excelData.Rows.Count == 0)
             {
@@ -103,6 +103,19 @@ namespace Dictionary
                 lbEX2.Text = "";
                 lbEX3.Text = "";
             }
+        }
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            TimKiem();
+        }
+
+        protected override bool ProcessDialogKey(Keys keyData)
+        {
+            if (keyData == Keys.Enter)
+            {
+                TimKiem();
+            }
+            return base.ProcessDialogKey(keyData);
         }
 
         // Chức năng sửa từ 
