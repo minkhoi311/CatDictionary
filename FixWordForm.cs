@@ -30,12 +30,16 @@ namespace Dictionary
 
                 string oldWord = txtOldWord.Text.Trim().ToLower();
                 string newWord = txtNewWord.Text.Trim();
+                string newIPA = txtIPAFix.Text.Trim();
+                string newMeaning = txtMeanFix.Text.Trim();
 
                 var row = excelData.AsEnumerable().FirstOrDefault(r => r[0].ToString().Trim().ToLower() == oldWord);
 
                 if (row != null)
                 {
                     row[0] = newWord;
+                    row[1] = newIPA;
+                    row[2] = newMeaning;
                     MessageBox.Show("Sửa từ thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     SaveToExcel();
                 }
