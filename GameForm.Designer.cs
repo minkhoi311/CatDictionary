@@ -44,6 +44,7 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.btnDong = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -98,7 +99,7 @@
             // 
             this.txtAns.Location = new System.Drawing.Point(367, 327);
             this.txtAns.Name = "txtAns";
-            this.txtAns.Size = new System.Drawing.Size(362, 35);
+            this.txtAns.Size = new System.Drawing.Size(362, 30);
             this.txtAns.TabIndex = 7;
             // 
             // lbIPA
@@ -125,11 +126,11 @@
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(308, 397);
+            this.btnConfirm.Location = new System.Drawing.Point(223, 397);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(153, 51);
             this.btnConfirm.TabIndex = 8;
-            this.btnConfirm.Text = "Xác Nhận";
+            this.btnConfirm.Text = "Kiểm tra";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
             // 
@@ -149,7 +150,7 @@
             // 
             this.btnContinue.BackColor = System.Drawing.Color.DarkGray;
             this.btnContinue.FlatAppearance.BorderSize = 0;
-            this.btnContinue.Location = new System.Drawing.Point(308, 397);
+            this.btnContinue.Location = new System.Drawing.Point(223, 397);
             this.btnContinue.Name = "btnContinue";
             this.btnContinue.Size = new System.Drawing.Size(153, 51);
             this.btnContinue.TabIndex = 8;
@@ -171,7 +172,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Dictionary.Properties.Resources.foot;
-            this.pictureBox2.Location = new System.Drawing.Point(33, 373);
+            this.pictureBox2.Location = new System.Drawing.Point(-56, 368);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(243, 181);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -204,9 +205,21 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // btnDong
+            // 
+            this.btnDong.BackColor = System.Drawing.Color.DarkGray;
+            this.btnDong.FlatAppearance.BorderSize = 0;
+            this.btnDong.Location = new System.Drawing.Point(418, 397);
+            this.btnDong.Name = "btnDong";
+            this.btnDong.Size = new System.Drawing.Size(153, 51);
+            this.btnDong.TabIndex = 8;
+            this.btnDong.Text = "Thoát";
+            this.btnDong.UseVisualStyleBackColor = false;
+            this.btnDong.Click += new System.EventHandler(this.btnDong_Click);
+            // 
             // GameForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(795, 494);
@@ -214,6 +227,7 @@
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.btnDong);
             this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.txtAns);
@@ -256,5 +270,6 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button btnDong;
     }
 }

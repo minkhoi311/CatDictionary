@@ -15,6 +15,7 @@ namespace Dictionary
         private MainFrm mainForm;
         private string currentWord;
         private Random random = new Random();
+        int count = 0;
         public GameForm(MainFrm form1)
         {
             InitializeComponent();
@@ -24,6 +25,7 @@ namespace Dictionary
 
         private void LoadNewWord()
         {
+            count = 0;
             if (mainForm.SavedWord.Count < 3)
             {
                 MessageBox.Show("Cần lưu ít nhất 3 từ để chơi!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -41,6 +43,7 @@ namespace Dictionary
 
             // Xóa nội dung TextBox
             txtAns.Text = "";
+            txtAns.Focus();
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
@@ -54,11 +57,23 @@ namespace Dictionary
                 btnContinue.Visible = true;
             }
             else
-            {
+            {   if (txtAns.Text == "")
+                {
+                    MessageBox.Show("Bạn vui lòng nhập đáp án", "Cảnh báo!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }           
+                count++;
                 lbAnnouce.ForeColor = Color.Red;
-                lbAnnouce.Text = "Sai rồi! Vui lòng đoán lại";
+                lbAnnouce.Text = "Sai rồi! Bạn còn " + (3-count).ToString() + " lượt!";
                 txtAns.Text = "";
+                if (count == 3)
+                {
+                    lbAnnouce.Text = "Sai rồi! Đáp án là: " + currentWord;
+                    lbMeaning.Text = lbIPA.Text = "";
+                    btnContinue.Visible = true;
+                }
             }
+            
         }
 
         private void btnContinue_Click(object sender, EventArgs e)
@@ -74,6 +89,11 @@ namespace Dictionary
             string lbForm = lbWord.Text;
             lbForm = lbForm.Substring(1) + lbForm[0];
             lbWord.Text = lbForm;
+        }
+
+        private void btnDong_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
