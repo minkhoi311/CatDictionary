@@ -103,6 +103,7 @@ namespace Dictionary
                 lbEX2.Text = "";
                 lbEX3.Text = "";
             }
+            txtSearch.Focus();
         }
         private void pictureBox2_Click(object sender, EventArgs e)
         {
