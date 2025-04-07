@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Data;
 using System.Drawing;
-using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using ExcelDataReader;
 using OfficeOpenXml;
@@ -23,7 +21,7 @@ namespace Dictionary
             Bitmap resized = new Bitmap(width, height);
             using (Graphics g = Graphics.FromImage(resized))  // sau khi ra khỏi using đối tượng g được hủy tự động 
             {
-                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic; // tính toán lại màu sắc của từng điểm ảnh(nội suy), kh bể hình 
+                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic; //kh bể hình 
                 g.DrawImage(img, 0, 0, width, height);
             }
             return resized;
@@ -58,7 +56,6 @@ namespace Dictionary
                     {
                         ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true }  // bỏ dùng dòng đầu tiên 
                     });
-
                     excelData = result.Tables[0]; // Lưu dữ liệu vào biến
                     this.filePath = filePath; // Lưu đường dẫn file
                 }
@@ -91,17 +88,11 @@ namespace Dictionary
             }
             
             // lưu file thành công 
-            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;  // sử dụng EPPlus ghi dữ liệu vào Excel ban phi thuong mai voi Hoc tap
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;  // sử dụng EPPlus ghi dữ liệu vào Excel ban phi thuong mai
             using (ExcelPackage package = new ExcelPackage(new FileInfo(filePath)))
             {
-
-                //while (package.Workbook.Worksheets.Count > 0)
-                //{
-                //    package.Workbook.Worksheets.Delete(0); // Xóa từng sheet từ index 0
-                //}
-
                 ExcelWorksheet worksheet = package.Workbook.Worksheets.FirstOrDefault() ?? package.Workbook.Worksheets.Add("Sheet lưu data từ excelData");
-                worksheet.Cells.Clear(); // Thay vì xóa sheet, chỉ xóa dữ liệu
+                worksheet.Cells.Clear(); // Xóa hết dữ liệu
 
                 for (int i = 0; i < excelData.Rows.Count; i++)
                 {
@@ -114,7 +105,6 @@ namespace Dictionary
                 package.Save();
             }
             return true;
-
         }
     }
 }

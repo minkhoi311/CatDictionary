@@ -38,14 +38,5 @@ namespace Dictionary
                 Application.Exit();
             }
         }
-
-        //private void timer2_Tick(object sender, EventArgs e)
-        //{
-        //    timer2.Stop();
-        //    MainFrm form1 = new MainFrm();
-        //    form1.FormClosed += (s, args) => this.Close(); // Khi đóng Form1, đóng luôn Loading
-        //    form1.Show();
-        //    this.Hide();
-        //}
     }
 }
