@@ -102,6 +102,7 @@ namespace Dictionary
                 lbEX1.Text = "";
                 lbEX2.Text = "";
                 lbEX3.Text = "";
+                txtSearch.Text = "";
             }
             txtSearch.Focus();
         }

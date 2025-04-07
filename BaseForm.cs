@@ -37,13 +37,26 @@ namespace Dictionary
                 return false;
             }
 
-            using (var stream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))  // using tự động đóng file sau khi làm việc 
+            using (FileStream stream = File.Open(filePath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))  // using tự động đóng file sau khi làm việc 
             {
-                using (var reader = ExcelReaderFactory.CreateReader(stream))  // tạo một trình đọc file Excel 
+                using (IExcelDataReader reader = ExcelReaderFactory.CreateReader(stream))  // tạo một trình đọc file Excel 
                 {
-                    var result = reader.AsDataSet(new ExcelDataSetConfiguration()
+                    //ExcelDataSetConfiguration config = new ExcelDataSetConfiguration()
+                    //{
+                    //    ConfigureDataTable = (tableReader) =>
+                    //    {
+                    //        return new ExcelDataTableConfiguration()
+                    //        {
+                    //            UseHeaderRow = true
+                    //        };
+                    //    }
+                    //};
+                    //DataSet result = reader.AsDataSet(config);
+                    //excelData = result.Tables[0];
+
+                    DataSet result = reader.AsDataSet(new ExcelDataSetConfiguration()
                     {
-                        ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = false }  // bỏ dùng dòng đầu tiên 
+                        ConfigureDataTable = (_) => new ExcelDataTableConfiguration() { UseHeaderRow = true }  // bỏ dùng dòng đầu tiên 
                     });
 
                     excelData = result.Tables[0]; // Lưu dữ liệu vào biến
@@ -78,8 +91,8 @@ namespace Dictionary
             }
             
             // lưu file thành công 
-            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;  // sử dụng EPPlus ghi dữ liệu vào Excel 
-            using (var package = new ExcelPackage(new FileInfo(filePath)))
+            ExcelPackage.LicenseContext = OfficeOpenXml.LicenseContext.NonCommercial;  // sử dụng EPPlus ghi dữ liệu vào Excel ban phi thuong mai voi Hoc tap
+            using (ExcelPackage package = new ExcelPackage(new FileInfo(filePath)))
             {
 
                 //while (package.Workbook.Worksheets.Count > 0)
@@ -87,7 +100,7 @@ namespace Dictionary
                 //    package.Workbook.Worksheets.Delete(0); // Xóa từng sheet từ index 0
                 //}
 
-                var worksheet = package.Workbook.Worksheets.FirstOrDefault() ?? package.Workbook.Worksheets.Add("Sheet lưu data từ excelData");
+                ExcelWorksheet worksheet = package.Workbook.Worksheets.FirstOrDefault() ?? package.Workbook.Worksheets.Add("Sheet lưu data từ excelData");
                 worksheet.Cells.Clear(); // Thay vì xóa sheet, chỉ xóa dữ liệu
 
                 for (int i = 0; i < excelData.Rows.Count; i++)
