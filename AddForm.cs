@@ -29,13 +29,14 @@ namespace Dictionary
 
         private void btnDone_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(txtWord.Text) || string.IsNullOrWhiteSpace(txtDefinition.Text))
+            if (string.IsNullOrWhiteSpace(txtWord.Text) || string.IsNullOrWhiteSpace(txtDefinition.Text)
+                || string.IsNullOrWhiteSpace(txtIPA.Text))
             {
-                MessageBox.Show("Vui lòng nhập đầy đủ thông tin từ vựng và nghĩa!", "Lỗi",
+                MessageBox.Show("Vui lòng nhập đầy đủ thông tin từ vựng, phiên âm và nghĩa!", "Lỗi",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            bool wordExists = excelData.AsEnumerable().Any(row => row[0].ToString() == txtWord.Text);  // kiểm tra từ đã tồn tại 
+            bool wordExists = excelData.AsEnumerable().Any(row => row[0].ToString() == txtWord.Text.Trim().ToLower());  // kiểm tra từ đã tồn tại 
             if (wordExists)
             {
                 MessageBox.Show("Từ này đã tồn tại trong danh sách!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -47,7 +48,7 @@ namespace Dictionary
             if(confirmResult == DialogResult.OK)
             {
                 // Gán giá trị từ input
-                string word = txtWord.Text.Trim();
+                string word = txtWord.Text.Trim().ToLower();
                 string ipa = txtIPA.Text.Trim();
                 string mean = txtDefinition.Text.Trim();
                 string ex1 = txtEx1.Text.Trim();
