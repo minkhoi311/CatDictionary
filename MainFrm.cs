@@ -20,6 +20,7 @@ namespace Dictionary
 
         private void Init()
         {
+            LoadExcelData("English100LettersDatabase.xlsx");
             lbEX1.Text = lbEX2.Text = lbEX3.Text = lbIPA.Text = lbMeaning.Text = lbWord.Text = "";
         }
 
